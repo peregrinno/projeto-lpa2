@@ -112,7 +112,7 @@ namespace ModernArt
             OpenChildForm(new Forms.FormDesigners(), sender);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClientes_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormClientes(), sender);
         }
@@ -185,6 +185,8 @@ namespace ModernArt
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+
 
         //Fim botoes de controle de janela
     }

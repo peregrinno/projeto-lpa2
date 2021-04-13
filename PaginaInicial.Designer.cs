@@ -125,7 +125,7 @@ namespace ModernArt
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.button1_Click);
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnDesigners
             // 
