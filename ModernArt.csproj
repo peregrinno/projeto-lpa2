@@ -129,7 +129,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dados\Cliente.cs" />
     <Compile Include="Dados\Dados.cs" />
+    <Compile Include="Dados\Designer.cs" />
+    <Compile Include="Dados\Projeto.cs" />
     <Compile Include="PaginaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
