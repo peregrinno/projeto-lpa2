@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 
 namespace ModernArt
@@ -41,6 +42,10 @@ namespace ModernArt
                 // Fecha conexão com o banco de dados
                 conexao.Close();
             }
+        }
+        internal void InserirServico()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
