@@ -124,7 +124,7 @@ namespace ModernArt
 
         private void btnProjetos_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormDesigners(), sender);
+            OpenChildForm(new Forms.FormProjetos(), sender);
         }
 
         //Fim dos metodos para chama os formularios filhos.
