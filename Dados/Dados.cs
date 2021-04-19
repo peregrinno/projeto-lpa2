@@ -16,6 +16,7 @@ namespace ModernArt
         // Variáveis da configuração do banco juntando as variáveis acima
         string config = $"Server = {servidorNome}; Port = {porta}; Database = {nomeBanco}; User Id = {usuario}; Password = {senha};";
 
+        // Métodos da tabela servicos
 
         /// <summary>
         /// Este método inclui novo registro na tabela <b>servicos</b>.
@@ -42,10 +43,6 @@ namespace ModernArt
                 // Fecha conexão com o banco de dados
                 conexao.Close();
             }
-        }
-        internal void InserirServico()
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -179,6 +176,147 @@ namespace ModernArt
                     comando.ExecuteNonQuery();
                 }
                 // Fecha a conexão com o banco de dados
+                conexao.Close();
+            }
+        }
+
+        // Métodos da tabela designers
+
+        /// <summary>
+        /// Este método inclui novo registro na tabela <b>designers</b>.
+        /// </summary>
+        public void InserirDesigner(string nomeDesigner, string telefoneDesigner, string emailDesigner, bool disponivelDesigner)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string inserir = "INSERT INTO public.designers(" +
+                    "designer_nome, designer_telefone, designer_email, designer_disponivel) " +
+                    "VALUES (@designer_nome, @designer_telefone, @designer_email, @designer_disponivel);";
+                using (NpgsqlCommand comando = new NpgsqlCommand(inserir, conexao))
+                {
+                    comando.Parameters.AddWithValue("designer_nome", nomeDesigner);
+                    comando.Parameters.AddWithValue("designer_telefone", telefoneDesigner);
+                    comando.Parameters.AddWithValue("designer_email", emailDesigner);
+                    comando.Parameters.AddWithValue("designer_disponivel", disponivelDesigner);
+                    comando.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        /// <summary>
+        /// Este método obtém todos os registros da tabela <b>designers</b>
+        /// </summary>
+        /// <returns>Uma lista que contém objetos do tipo Designer</returns>
+        public List<Designer> GetTodosDesigners()
+        {
+            int id;
+            string nomeDesigner;
+            string telefoneDesigner; 
+            string emailDesigner; 
+            bool disponivelDesigner;
+            Designer designer;
+            List<Designer> designers = new List<Designer>();
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string selecionar = "SELECT * FROM public.designers ORDER BY id;";
+                using (NpgsqlCommand comando = new NpgsqlCommand(selecionar, conexao))
+                {
+                    NpgsqlDataReader query = comando.ExecuteReader();
+                    while (query.Read())
+                    {
+                        id = query.GetInt32(0);
+                        nomeDesigner = query.GetString(1).Trim();
+                        telefoneDesigner = query.GetString(2).Trim();
+                        emailDesigner = query.GetString(3).Trim();
+                        disponivelDesigner = query.GetBoolean(4);
+
+                        designer = new Designer(id, nomeDesigner, telefoneDesigner, emailDesigner, disponivelDesigner);
+
+                        designers.Add(designer);
+                    }
+                }
+                conexao.Close();
+            }
+            return designers;
+        }
+
+        /// <summary>
+        /// Este método obtém um registro da tabela <b>designers</b> correspondente ao id
+        /// </summary>
+        /// <returns>Um objeto do tipo Designer</returns>
+        public Designer GetDesignerPorId(int id)
+        {
+            string nomeDesigner;
+            string telefoneDesigner;
+            string emailDesigner;
+            bool disponivelDesigner;
+            Designer designer;
+            List<Designer> designers = new List<Designer>(1);
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string selecionar = $"SELECT * FROM public.designers WHERE id = {id};";
+                using (NpgsqlCommand comando = new NpgsqlCommand(selecionar, conexao))
+                {
+                    NpgsqlDataReader query = comando.ExecuteReader();
+                    while (query.Read())
+                    {
+                        nomeDesigner = query.GetString(1).Trim();
+                        telefoneDesigner = query.GetString(2).Trim();
+                        emailDesigner = query.GetString(3).Trim();
+                        disponivelDesigner = query.GetBoolean(4);
+
+                        designer = new Designer(id, nomeDesigner, telefoneDesigner, emailDesigner, disponivelDesigner);
+
+                        designers.Add(designer);
+                    }
+                }
+                conexao.Close();
+            }
+            return designers[0];
+        }
+
+        /// <summary>
+        /// Este método atualiza os campos de uma entrada da tabela <b>designers</b> selecionada por id.
+        /// </summary>
+        public void AtualizarDesigner(int id, string nomeDesigner, string telefoneDesigner, string emailDesigner, bool disponivelDesigner)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {                
+                conexao.Open();
+                string atualizar = "UPDATE public.designers " +
+                    "SET designer_nome=@designer_nome, designer_telefone=@designer_telefone, designer_email=@designer_email, designer_disponivel=@designer_disponivel " +
+                    "WHERE id = @id;";                
+                using (NpgsqlCommand comando = new NpgsqlCommand(atualizar, conexao))
+                {
+                    comando.Parameters.AddWithValue("id", id);
+                    comando.Parameters.AddWithValue("designer_nome", nomeDesigner);
+                    comando.Parameters.AddWithValue("designer_telefone", telefoneDesigner);
+                    comando.Parameters.AddWithValue("designer_email", emailDesigner);
+                    comando.Parameters.AddWithValue("designer_disponivel", disponivelDesigner);
+                    comando.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        /// <summary>
+        /// Este método deleta uma entrada da tabela <b>designers</b> com base no ID
+        /// </summary>
+        public void DeletarDesigner(int id)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string deletar = "DELETE FROM public.designers WHERE id = @id;";
+                using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                {
+                    comando.Parameters.AddWithValue("id", id);
+                    comando.ExecuteNonQuery();
+                }
                 conexao.Close();
             }
         }

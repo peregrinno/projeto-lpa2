@@ -15,30 +15,82 @@ namespace ModernArt.Forms
         public FormDesigners()
         {
             InitializeComponent();
-        }
-        private void FormDesigners_Load(object sender, EventArgs e)
-        {
-
+            AtualizaViewDesigners();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void AtualizaViewDesigners()
         {
-
+            comboDesigners.Items.Clear();
+            Dados dados = new Dados();
+            List<Designer> listaDesigners = dados.GetTodosDesigners();
+            TabelaDesigner.DataSource = listaDesigners;
+            foreach (Designer designer in listaDesigners)
+            {
+                comboDesigners.Items.Add($"{designer.Id} - {designer.Nome}");
+            }
+            comboDesigners.SelectedIndex = 0;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void adicionarDesigner_Click(object sender, EventArgs e)
         {
-
+            bool designerDisponivel;
+            if (designerTrue.Checked)
+            {
+                designerDisponivel = true;
+            }
+            else
+            {
+                designerDisponivel = false;
+            }
+            Dados dados = new Dados();
+            dados.InserirDesigner(nomeDesigner.Text, telefoneDesigner.Text, emailDesigner.Text, designerDisponivel);
+            AtualizaViewDesigners();
+            MessageBox.Show("Designer adicionado com sucesso!");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void atualizarDesigner_Click(object sender, EventArgs e)
         {
-
+            int id = Convert.ToInt32(comboDesigners.SelectedItem.ToString().Split(' ')[0]);
+            bool designerDisponivel;
+            if (designerTrue.Checked)
+            {
+                designerDisponivel = true;
+            }
+            else
+            {
+                designerDisponivel = false;
+            }
+            Dados dados = new Dados();
+            dados.AtualizarDesigner(id, nomeDesigner.Text, telefoneDesigner.Text, emailDesigner.Text, designerDisponivel);
+            AtualizaViewDesigners();
+            MessageBox.Show("Alterado com sucesso!");
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void deletarDesigner_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(comboDesigners.SelectedItem.ToString().Split(' ')[0]);
+            Dados dados = new Dados();
+            dados.DeletarDesigner(id);
+            AtualizaViewDesigners();
+            MessageBox.Show("Deletado com sucesso.");
+        }
 
+        private void comboDesigners_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(comboDesigners.SelectedItem.ToString().Split(' ')[0]);
+            Dados dados = new Dados();
+            Designer designer = dados.GetDesignerPorId(id);
+            nomeDesigner.Text = designer.Nome;
+            telefoneDesigner.Text = designer.Telefone;
+            emailDesigner.Text = designer.Email;
+            if (designer.Disponivel)
+            {
+                designerTrue.Checked = true;
+            }
+            else
+            {
+                designerFalse.Checked = true;
+            }
         }
     }
 }
