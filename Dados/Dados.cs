@@ -457,5 +457,173 @@ namespace ModernArt
             }
         }
 
+        // Métodos da tabela Projetos
+
+        /// <summary>
+        /// Este método inclui novo registro na tabela <b>projetos</b>.
+        /// </summary>
+        public void InserirProjeto(int designerId, int servicoId, int clienteId, string nomeProjeto,
+            double valorProjeto, char statusProjeto)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string inserir = "INSERT INTO public.projetos(" +
+                    "designer_id, servico_id, cliente_id, projeto_nome, " +
+                    "projeto_data, projeto_valor_final, projeto_status) " +
+                    "VALUES (@designer_id, @servico_id, @cliente_id, @projeto_nome, " +
+                    "@projeto_data, @projeto_valor_final, @projeto_status);";
+                DateTime dataLocal = DateTime.Now;
+                using (NpgsqlCommand comando = new NpgsqlCommand(inserir, conexao))
+                {
+                    comando.Parameters.AddWithValue("designer_id", designerId);
+                    comando.Parameters.AddWithValue("servico_id", servicoId);
+                    comando.Parameters.AddWithValue("cliente_id", clienteId);
+                    comando.Parameters.AddWithValue("projeto_nome", nomeProjeto);
+                    comando.Parameters.AddWithValue("projeto_data", dataLocal);
+                    comando.Parameters.AddWithValue("projeto_valor_final", valorProjeto);
+                    comando.Parameters.AddWithValue("projeto_status", statusProjeto);
+                    comando.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        /// <summary>
+        /// Este método obtém todos os registros da tabela <b>projetos</b>
+        /// </summary>
+        /// <returns>Uma lista que contém objetos do tipo Projeto</returns>
+        public List<Projeto> GetTodosProjetos()
+        {
+            int id;
+            int designerId; 
+            int servicoId; 
+            int clienteId; 
+            string nomeProjeto;
+            DateTime dataProjeto;
+            double valorProjeto; 
+            char statusProjeto;
+            Projeto projeto;
+            List<Projeto> projetos = new List<Projeto>();
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string selecionar = "SELECT * FROM public.projetos ORDER BY id;";
+                using (NpgsqlCommand comando = new NpgsqlCommand(selecionar, conexao))
+                {
+                    NpgsqlDataReader query = comando.ExecuteReader();
+                    while (query.Read())
+                    {
+                        id = query.GetInt32(0);
+                        designerId = query.GetInt32(1);
+                        servicoId = query.GetInt32(2);
+                        clienteId = query.GetInt32(3);
+                        nomeProjeto = query.GetString(4).Trim();
+                        dataProjeto = query.GetDateTime(5);
+                        valorProjeto = query.GetDouble(6);
+                        statusProjeto = query.GetChar(7);
+
+                        projeto = new Projeto(id, GetDesignerPorId(designerId), GetServicoPorId(servicoId), 
+                            GetClientePorId(clienteId), nomeProjeto, dataProjeto, valorProjeto, statusProjeto);
+
+                        projetos.Add(projeto);
+                    }
+                }
+                conexao.Close();
+            }
+            return projetos;
+        }
+
+        /// <summary>
+        /// Este método obtém um registro da tabela <b>projetos</b> correspondente ao id
+        /// </summary>
+        /// <returns>Um objeto do tipo Projeto</returns>
+        public Projeto GetProjetoPorId(int id)
+        {
+            int designerId;
+            int servicoId;
+            int clienteId;
+            string nomeProjeto;
+            DateTime dataProjeto;
+            double valorProjeto;
+            char statusProjeto;
+            Projeto projeto;
+            List<Projeto> projetos = new List<Projeto>(1);
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string selecionar = $"SELECT * FROM public.projetos WHERE id = {id};";
+                using (NpgsqlCommand comando = new NpgsqlCommand(selecionar, conexao))
+                {
+                    NpgsqlDataReader query = comando.ExecuteReader();
+                    while (query.Read())
+                    {
+                        designerId = query.GetInt32(1);
+                        servicoId = query.GetInt32(2);
+                        clienteId = query.GetInt32(3);
+                        nomeProjeto = query.GetString(4).Trim();
+                        dataProjeto = query.GetDateTime(5);
+                        valorProjeto = query.GetDouble(6);
+                        statusProjeto = query.GetChar(7);
+
+                        projeto = new Projeto(id, GetDesignerPorId(designerId), GetServicoPorId(servicoId),
+                            GetClientePorId(clienteId), nomeProjeto, dataProjeto, valorProjeto, statusProjeto);
+
+                        projetos.Add(projeto);
+                    }
+                }
+                conexao.Close();
+            }
+            return projetos[0];
+        }
+
+        /// <summary>
+        /// Este método atualiza os campos de uma entrada da tabela <b>projetos</b> selecionada por id.
+        /// </summary>
+        public void AtualizarProjeto(int id, int designerId, int servicoId, int clienteId, string nomeProjeto,
+            double valorProjeto, char statusProjeto)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string atualizar = "UPDATE public.projetos " +
+                    "SET designer_id=@designer_id, servico_id=@servico_id, cliente_id=@cliente_id, projeto_nome=@projeto_nome, " +
+                    "projeto_data=@projeto_data, projeto_valor_final=@projeto_valor_final, projeto_status=@projeto_status " +
+                    "WHERE id = @id;";
+                DateTime dataLocal = DateTime.Now;
+                using (NpgsqlCommand comando = new NpgsqlCommand(atualizar, conexao))
+                {
+                    comando.Parameters.AddWithValue("id", id);
+                    comando.Parameters.AddWithValue("designer_id", designerId);
+                    comando.Parameters.AddWithValue("servico_id", servicoId);
+                    comando.Parameters.AddWithValue("cliente_id", clienteId);
+                    comando.Parameters.AddWithValue("projeto_nome", nomeProjeto);
+                    comando.Parameters.AddWithValue("projeto_data", dataLocal);
+                    comando.Parameters.AddWithValue("projeto_valor_final", valorProjeto);
+                    comando.Parameters.AddWithValue("projeto_status", statusProjeto);
+                    comando.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        /// <summary>
+        /// Este método deleta uma entrada da tabela <b>projetos</b> com base no ID
+        /// </summary>
+        public void DeletarProjeto(int id)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string deletar = "DELETE FROM public.projeto WHERE id = @id;";
+                using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                {
+                    comando.Parameters.AddWithValue("id", id);
+                    comando.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
     }    
 }

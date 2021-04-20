@@ -4,7 +4,7 @@ namespace ModernArt
 {
     class Projeto
     {
-        public Projeto(int id, Designer designer, Servico servico, Cliente cliente, string nome, DateTime data, double valorFinal, string status)
+        public Projeto(int id, Designer designer, Servico servico, Cliente cliente, string nome, DateTime data, double valorFinal, char status)
         {
             Id = id;
             Designer = designer;
@@ -23,6 +23,6 @@ namespace ModernArt
         public string Nome { get; set; }
         public DateTime Data { get; set; }
         public double ValorFinal { get; set; }
-        public string Status { get; set; }
+        public char Status { get; set; }
     }
 }
