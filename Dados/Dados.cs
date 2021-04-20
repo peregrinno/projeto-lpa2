@@ -320,5 +320,142 @@ namespace ModernArt
                 conexao.Close();
             }
         }
+
+        // Métodos da tabela clientes
+
+        /// <summary>
+        /// Este método inclui novo registro na tabela <b>clientes</b>.
+        /// </summary>
+        public void InserirCliente(string nomeCliente, string emailCliente, string telefoneCliente)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string inserir = "INSERT INTO public.clientes(" +
+                    "cliente_nome, cliente_email, cliente_telefone) " +
+                    "VALUES (@cliente_nome, @cliente_email, @cliente_telefone);";
+                using (NpgsqlCommand comando = new NpgsqlCommand(inserir, conexao))
+                {
+                    comando.Parameters.AddWithValue("cliente_nome", nomeCliente);
+                    comando.Parameters.AddWithValue("cliente_email", emailCliente);
+                    comando.Parameters.AddWithValue("cliente_telefone", telefoneCliente);
+                    comando.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        /// <summary>
+        /// Este método obtém todos os registros da tabela <b>clientes</b>
+        /// </summary>
+        /// <returns>Uma lista que contém objetos do tipo Cliente</returns>
+        public List<Cliente> GetTodosClientes()
+        {
+            int id;
+            string nomeCliente; 
+            string emailCliente; 
+            string telefoneCliente;
+            Cliente cliente;
+            List<Cliente> clientes = new List<Cliente>();
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string selecionar = "SELECT * FROM public.clientes ORDER BY id;";
+                using (NpgsqlCommand comando = new NpgsqlCommand(selecionar, conexao))
+                {
+                    NpgsqlDataReader query = comando.ExecuteReader();
+                    while (query.Read())
+                    {
+                        id = query.GetInt32(0);
+                        nomeCliente = query.GetString(1).Trim();
+                        emailCliente = query.GetString(2).Trim();
+                        telefoneCliente = query.GetString(3).Trim();
+
+                        cliente = new Cliente(id, nomeCliente, emailCliente, telefoneCliente);
+
+                        clientes.Add(cliente);
+                    }
+                }
+                conexao.Close();
+            }
+            return clientes;
+        }
+
+        /// <summary>
+        /// Este método obtém um registro da tabela <b>clientes</b> correspondente ao id
+        /// </summary>
+        /// <returns>Um objeto do tipo Cliente</returns>
+        public Cliente GetClientePorId(int id)
+        {
+            string nomeCliente;
+            string emailCliente;
+            string telefoneCliente;
+            Cliente cliente;
+            List<Cliente> clientes = new List<Cliente>(1);
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string selecionar = $"SELECT * FROM public.clientes WHERE id = {id};";
+                using (NpgsqlCommand comando = new NpgsqlCommand(selecionar, conexao))
+                {
+                    NpgsqlDataReader query = comando.ExecuteReader();
+                    while (query.Read())
+                    {
+                        id = query.GetInt32(0);
+                        nomeCliente = query.GetString(1).Trim();
+                        emailCliente = query.GetString(2).Trim();
+                        telefoneCliente = query.GetString(3).Trim();
+
+                        cliente = new Cliente(id, nomeCliente, emailCliente, telefoneCliente);
+
+                        clientes.Add(cliente);
+                    }
+                }
+                conexao.Close();
+            }
+            return clientes[0];
+        }
+
+        /// <summary>
+        /// Este método atualiza os campos de uma entrada da tabela <b>clientes</b> selecionada por id.
+        /// </summary>
+        public void AtualizarCliente(int id, string nomeCliente, string emailCliente, string telefoneCliente)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string atualizar = "UPDATE public.clientes " +
+                    "SET cliente_nome=@cliente_nome, cliente_email=@cliente_email, cliente_telefone=@cliente_telefone " +
+                    "WHERE id = @id;";
+                using (NpgsqlCommand comando = new NpgsqlCommand(atualizar, conexao))
+                {
+                    comando.Parameters.AddWithValue("id", id);
+                    comando.Parameters.AddWithValue("cliente_nome", nomeCliente);
+                    comando.Parameters.AddWithValue("cliente_email", emailCliente);
+                    comando.Parameters.AddWithValue("cliente_telefone", telefoneCliente);
+                    comando.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        /// <summary>
+        /// Este método deleta uma entrada da tabela <b>clientes</b> com base no ID
+        /// </summary>
+        public void DeletarCliente(int id)
+        {
+            using (NpgsqlConnection conexao = new NpgsqlConnection(config))
+            {
+                conexao.Open();
+                string deletar = "DELETE FROM public.clientes WHERE id = @id;";
+                using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                {
+                    comando.Parameters.AddWithValue("id", id);
+                    comando.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
     }    
 }

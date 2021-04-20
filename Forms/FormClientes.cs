@@ -15,6 +15,56 @@ namespace ModernArt.Forms
         public FormClientes()
         {
             InitializeComponent();
+            AtualizaViewClientes();
+        }
+
+        private void AtualizaViewClientes()
+        {
+            comboClientes.Items.Clear();
+            Dados dados = new Dados();
+            List<Cliente> listaClientes = dados.GetTodosClientes();
+            TabelaCliente.DataSource = listaClientes;
+            foreach (Cliente cliente in listaClientes)
+            {
+                comboClientes.Items.Add($"{cliente.Id} - {cliente.Nome}");
+            }
+            comboClientes.SelectedIndex = 0;
+        }
+
+        private void adicionarCliente_Click(object sender, EventArgs e)
+        {
+            Dados dados = new Dados();
+            dados.InserirCliente(nomeCliente.Text, emailCliente.Text, telefoneCliente.Text);
+            AtualizaViewClientes();
+            MessageBox.Show("Cliente adicionado com sucesso!");
+        }
+
+        private void atualizarCliente_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(comboClientes.SelectedItem.ToString().Split(' ')[0]);
+            Dados dados = new Dados();
+            dados.AtualizarCliente(id, nomeCliente.Text, emailCliente.Text, telefoneCliente.Text);
+            AtualizaViewClientes();
+            MessageBox.Show("Alterado com sucesso!");
+        }
+
+        private void deletarCliente_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(comboClientes.SelectedItem.ToString().Split(' ')[0]);
+            Dados dados = new Dados();
+            dados.DeletarCliente(id);
+            AtualizaViewClientes();
+            MessageBox.Show("Deletado com sucesso.");
+        }
+
+        private void comboClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(comboClientes.SelectedItem.ToString().Split(' ')[0]);
+            Dados dados = new Dados();
+            Cliente cliente = dados.GetClientePorId(id);
+            nomeCliente.Text = cliente.Nome;
+            emailCliente.Text = cliente.Email; 
+            telefoneCliente.Text = cliente.Telefone;
         }
     }
 }
