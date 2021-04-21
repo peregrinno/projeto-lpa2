@@ -18,6 +18,22 @@ namespace ModernArt.Forms
             AtualizaViewClientes();
         }
 
+        public void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.Gainsboro;
+                    btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label4.ForeColor = ThemeColor.SecondaryColor;
+        }
+
         private void AtualizaViewClientes()
         {
             comboClientes.Items.Clear();
@@ -65,6 +81,11 @@ namespace ModernArt.Forms
             nomeCliente.Text = cliente.Nome;
             emailCliente.Text = cliente.Email; 
             telefoneCliente.Text = cliente.Telefone;
+        }
+
+        private void FormClientes_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
         }
     }
 }

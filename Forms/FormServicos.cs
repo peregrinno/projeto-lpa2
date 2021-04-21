@@ -18,6 +18,23 @@ namespace ModernArt.Forms
             AtualizarViewServicos();
             
         }
+
+        public void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.Gainsboro;
+                    btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label4.ForeColor = ThemeColor.SecondaryColor;
+        }
+
         public void AtualizarViewServicos() {
             comboServicos.Items.Clear();
             Dados dados = new Dados();
@@ -73,6 +90,11 @@ namespace ModernArt.Forms
             servicoNome.Text = servico.Nome;
             valorBaseServico.Text = Convert.ToString(servico.ValorBase);
 
+        }
+
+        private void FormServicos_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
         }
     }
 }

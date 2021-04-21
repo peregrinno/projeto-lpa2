@@ -273,6 +273,7 @@ namespace ModernArt.Forms
             this.Controls.Add(this.deletarProjeto);
             this.Name = "FormProjetos";
             this.Text = "Projetos";
+            this.Load += new System.EventHandler(this.FormProjetos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TabelaProjetos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
