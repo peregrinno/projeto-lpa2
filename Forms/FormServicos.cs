@@ -96,5 +96,10 @@ namespace ModernArt.Forms
         {
             LoadTheme();
         }
+
+        private void TabelaServico_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
