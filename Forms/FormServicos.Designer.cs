@@ -196,6 +196,7 @@ namespace ModernArt.Forms
             this.Controls.Add(this.deletarServicos);
             this.Name = "FormServicos";
             this.Text = "Serviços";
+            this.Load += new System.EventHandler(this.FormServicos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TabelaServico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,6 +19,22 @@ namespace ModernArt.Forms
             AtualizaViewProjetos();
         }
 
+        public void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.Gainsboro;
+                    btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label4.ForeColor = ThemeColor.SecondaryColor;
+        }
+
         private void AtualizaViewEstrangeiras()
         {
             comboFkClientes.Items.Clear();
@@ -156,6 +172,11 @@ namespace ModernArt.Forms
                 }
             }
 
+        }
+
+        private void FormProjetos_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
         }
     }
 }
