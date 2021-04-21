@@ -203,6 +203,7 @@ namespace ModernArt
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(864, 80);
             this.panelTitleBar.TabIndex = 1;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown_1);
             // 
             // btnMiniminize
             // 
@@ -261,13 +262,12 @@ namespace ModernArt
             // btnCloseChildForm
             // 
             this.btnCloseChildForm.BackColor = System.Drawing.Color.Transparent;
-            this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
             this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChildForm.Image = global::ModernArt.Properties.Resources.close;
-            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 0);
+            this.btnCloseChildForm.Location = new System.Drawing.Point(7, 24);
             this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(44, 80);
+            this.btnCloseChildForm.Size = new System.Drawing.Size(25, 30);
             this.btnCloseChildForm.TabIndex = 5;
             this.btnCloseChildForm.UseVisualStyleBackColor = false;
             this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
@@ -297,6 +297,7 @@ namespace ModernArt
             this.MinimumSize = new System.Drawing.Size(1100, 620);
             this.Name = "PanelAgencia";
             this.Text = "Coral - Agência digital";
+            this.Load += new System.EventHandler(this.PanelAgencia_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

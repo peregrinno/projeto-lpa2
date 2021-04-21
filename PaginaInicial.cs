@@ -31,11 +31,11 @@ namespace ModernArt
 
         //Comando faz parte da função de deixar a janela movivel
 
-        //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        //private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
 
-        //[DllImport("user32.DLL", EntryPoint = "SendCapture")]
-        //-private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         //
 
@@ -157,11 +157,11 @@ namespace ModernArt
 
         //Função para deixar a janela "movivel", NAO FUNCIONA AINDA D;
 
-        //private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    ReleaseCapture();
-        //    SendMessage(this.Handle, 0x112, 0xf012, 0);
-        //}
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
 
 
 
@@ -186,6 +186,17 @@ namespace ModernArt
         private void btnMiniminize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void PanelAgencia_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelTitleBar_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
 
