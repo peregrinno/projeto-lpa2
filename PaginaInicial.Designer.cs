@@ -31,6 +31,7 @@ namespace ModernArt
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelAgencia));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnSobre = new System.Windows.Forms.Button();
             this.btnProjetos = new System.Windows.Forms.Button();
             this.btnServicos = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@ namespace ModernArt
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnSobre);
             this.panelMenu.Controls.Add(this.btnProjetos);
             this.panelMenu.Controls.Add(this.btnServicos);
             this.panelMenu.Controls.Add(this.btnClientes);
@@ -66,6 +68,26 @@ namespace ModernArt
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 581);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnSobre
+            // 
+            this.btnSobre.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSobre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnSobre.FlatAppearance.BorderSize = 0;
+            this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSobre.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSobre.Image = global::ModernArt.Properties.Resources.info;
+            this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSobre.Location = new System.Drawing.Point(0, 531);
+            this.btnSobre.Name = "btnSobre";
+            this.btnSobre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSobre.Size = new System.Drawing.Size(220, 50);
+            this.btnSobre.TabIndex = 4;
+            this.btnSobre.Text = "          Sobre";
+            this.btnSobre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSobre.UseVisualStyleBackColor = true;
+            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
             // 
             // btnProjetos
             // 
@@ -327,6 +349,7 @@ namespace ModernArt
         private System.Windows.Forms.Button btnMiniminize;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnSobre;
     }
 }
 

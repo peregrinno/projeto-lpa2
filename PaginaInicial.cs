@@ -129,6 +129,11 @@ namespace ModernArt
             OpenChildForm(new Forms.FormProjetos(), sender);
         }
 
+        private void btnSobre_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSobre(), sender);
+        }
+
         //Fim dos metodos para chama os formularios filhos.
 
         //Botao pra fechar quaisquer opçao aberta
@@ -198,9 +203,6 @@ namespace ModernArt
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-
-
         //Fim botoes de controle de janela
     }
 }
