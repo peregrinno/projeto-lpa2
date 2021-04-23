@@ -133,6 +133,16 @@ namespace ModernArt.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap info {
+            get {
+                object obj = ResourceManager.GetObject("info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap limpar {
             get {
                 object obj = ResourceManager.GetObject("limpar", resourceCulture);
@@ -156,6 +166,16 @@ namespace ModernArt.Properties {
         internal static System.Drawing.Bitmap logo_agencia_home {
             get {
                 object obj = ResourceManager.GetObject("logo-agencia-home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_upe {
+            get {
+                object obj = ResourceManager.GetObject("logo-upe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -121,6 +121,12 @@
     <Compile Include="Dados\Dados.cs" />
     <Compile Include="Dados\Designer.cs" />
     <Compile Include="Dados\Projeto.cs" />
+    <Compile Include="Forms\FormSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSobre.Designer.cs">
+      <DependentUpon>FormSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ThemeColor.cs" />
+    <EmbeddedResource Include="Forms\FormSobre.resx">
+      <DependentUpon>FormSobre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial.resx">
       <DependentUpon>PaginaInicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +234,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo-upe.png" />
+    <None Include="Resources\info.png" />
     <None Include="Resources\limpar.png" />
     <None Include="imagens\brancos\doca.png" />
     <None Include="imagens\brancos\doca220.png" />

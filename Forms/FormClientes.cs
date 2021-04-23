@@ -31,7 +31,6 @@ namespace ModernArt.Forms
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
-            label4.ForeColor = ThemeColor.SecondaryColor;
         }
 
         private void AtualizaViewClientes()
