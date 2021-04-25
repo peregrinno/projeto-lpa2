@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace ModernArt.Forms
 {
@@ -108,9 +111,94 @@ namespace ModernArt.Forms
             }
         }
 
+        //Metodo imprimir
+        private void imprimir()
+        {
+            // Para gerar tabela de serviços..
+
+            Dados dados = new Dados();
+            List<Designer> listaDesigners = dados.GetTodosDesigners();
+
+            //Cria e formata documento
+            Document doc = new Document(PageSize.A4);
+            doc.SetMargins(10, 10, 30, 80);
+            doc.AddCreationDate();
+            string caminho = @"C:\pdf\" + "Relatório de Designers.pdf";
+
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+
+            doc.Open();
+
+            //Coloca logo do Sistema
+            string simg = "https://i.ibb.co/3yZrdzV/icone1.png";
+            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(simg);
+            img.ScaleAbsolute(64, 64);
+            img.Alignment = Element.ALIGN_CENTER;
+
+            doc.Add(img);
+
+            //Paragrafos
+            Paragraph espaco = new Paragraph();
+            espaco.Add("\n\n\n\n");
+            doc.Add(espaco);
+
+            Paragraph titulo = new Paragraph();
+            titulo.Font = new iTextSharp.text.Font(
+                iTextSharp.text.Font.FontFamily.COURIER, 30);
+            titulo.Alignment = Element.ALIGN_CENTER;
+            titulo.Add("Coral - Agência digital\n\n");
+            doc.Add(titulo);
+
+            Paragraph subtitulo = new Paragraph();
+            subtitulo.Font = new iTextSharp.text.Font(
+                iTextSharp.text.Font.FontFamily.COURIER, 15);
+            subtitulo.Alignment = Element.ALIGN_CENTER;
+            subtitulo.Add("Relatório de Designers\n\n");
+            doc.Add(subtitulo);
+
+
+            //Tabela aqui!
+
+            PdfPTable table = new PdfPTable(4);
+
+            table.AddCell("______Nome");
+            table.AddCell("____Telefone"); 
+            table.AddCell("______Email");
+            table.AddCell("__Disponibilidade");
+
+
+            foreach (Designer designer in listaDesigners)
+            {
+                table.AddCell(designer.Nome);
+                table.AddCell(designer.Telefone);
+                table.AddCell(designer.Email);
+                if (designer.Disponivel == true)
+                {
+                    table.AddCell("Disponivel");
+                }
+                else
+                {
+                    table.AddCell("Indisponível");
+                }
+            }
+
+            doc.Add(table);
+
+            //Fecha documento, mostra uma mensagem amigavel e depois do "OK" o documento abre
+            doc.Close();
+            MessageBox.Show("Impressão realizada com sucesso! O relatório será exibido em seguida..");
+            System.Diagnostics.Process.Start(caminho);
+
+        }
+
         private void FormDesigners_Load(object sender, EventArgs e)
         {
             LoadTheme();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            imprimir();
         }
     }
 }
