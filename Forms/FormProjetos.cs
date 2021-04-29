@@ -17,10 +17,13 @@ namespace ModernArt.Forms
     {
         public FormProjetos()
         {
+            DirectoryInfo raiz = new DirectoryInfo(@"C:\CoralArt");
+            raiz.CreateSubdirectory("Relatórios");
             InitializeComponent();
             AtualizaViewEstrangeiras();
             AtualizaViewProjetos();
         }
+        public int Hour { get; }
 
         public void LoadTheme()
         {
@@ -46,6 +49,7 @@ namespace ModernArt.Forms
             foreach (Cliente cliente in dados.GetTodosClientes())
             {
                 comboFkClientes.Items.Add($"{cliente.Id} - {cliente.Nome}");
+                Console.WriteLine();
             }
             foreach (Designer designer in dados.GetTodosDesigners())
             {
@@ -197,7 +201,7 @@ namespace ModernArt.Forms
             Document doc = new Document(PageSize.A4);
             doc.SetMargins(5, 5, 30, 80);
             doc.AddCreationDate();
-            string caminho = @"C:\pdf\" + "Relatório de Projetos.pdf";
+            string caminho = @"C:\CoralArt\Relatórios\" + "Relatorio de Projetos.pdf";
 
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
 
@@ -242,9 +246,25 @@ namespace ModernArt.Forms
             table.AddCell("Valor");
             table.AddCell("Status");
 
-            foreach (Cliente cliente in listaClientes)
+            foreach (Projeto projeto in listaProjetos)
             {
-                table.AddCell(cliente.Nome);
+                table.AddCell(Convert.ToString(projeto.Cliente.Nome));
+                table.AddCell(projeto.Nome);
+                table.AddCell(Convert.ToString(projeto.Designer.Nome));
+                table.AddCell(Convert.ToString(projeto.Servico.Nome));
+                table.AddCell(Convert.ToString(projeto.ValorFinal));
+                if (projeto.Status == 'O')
+                {
+                    table.AddCell("Orçamento");
+                }
+                else if (projeto.Status == 'A')
+                {
+                    table.AddCell("Em andamento");
+                }
+                else
+                {
+                    table.AddCell("Finalizado");
+                }
             }
 
             doc.Add(table);

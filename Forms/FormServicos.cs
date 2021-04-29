@@ -17,6 +17,8 @@ namespace ModernArt.Forms
     {
         public FormServicos()
         {
+            DirectoryInfo raiz = new DirectoryInfo(@"C:\CoralArt");
+            raiz.CreateSubdirectory("Relatórios");
             InitializeComponent();
             AtualizarViewServicos();
             
@@ -120,7 +122,7 @@ namespace ModernArt.Forms
             Document doc = new Document(PageSize.A4);
             doc.SetMargins(40, 40, 40, 80);
             doc.AddCreationDate();
-            string caminho = @"C:\pdf\" + "Relatório de Serviços.pdf";
+            string caminho = @"C:\CoralArt\Relatórios\" + "Relatório de Serviços.pdf";
 
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
 
