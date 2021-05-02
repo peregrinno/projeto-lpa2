@@ -127,7 +127,8 @@ namespace ModernArt.Forms
             Document doc = new Document(PageSize.A4);
             doc.SetMargins(10, 10, 30, 80);
             doc.AddCreationDate();
-            string caminho = @"C:\CoralArt\Relatórios\" + "Relatório de Designers.pdf";
+            var data = DateTime.Now.ToString("yyyy-MM-dd");
+            string caminho = $@"C:\CoralArt\Relatórios\Relatório de Designers {data}.pdf";
 
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
 
@@ -207,8 +208,15 @@ namespace ModernArt.Forms
 
         private void btnLimpaCampos_Click(object sender, EventArgs e)
         {
+            limpar();
+        }
+
+        private void limpar()
+        {
+            TabelaDesigner.ClearSelection();
             foreach (TextBox textBox in Controls.OfType<TextBox>())
                 textBox.Text = "";
+            designerTrue.Checked = true;
         }
 
         private void TabelaDesigner_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
@@ -230,6 +238,11 @@ namespace ModernArt.Forms
             {
                 designerFalse.Checked = true;
             }
+        }
+
+        private void TabelaDesigner_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            limpar();
         }
     }
 }

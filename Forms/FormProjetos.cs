@@ -208,7 +208,8 @@ namespace ModernArt.Forms
             Document doc = new Document(PageSize.A4);
             doc.SetMargins(5, 5, 30, 80);
             doc.AddCreationDate();
-            string caminho = @"C:\CoralArt\Relatórios\" + "Relatorio de Projetos.pdf";
+            var data = DateTime.Now.ToString("yyyy-MM-dd");
+            string caminho = $@"C:\CoralArt\Relatórios\Relatorio de Projetos {data}.pdf";
 
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
 
@@ -295,8 +296,7 @@ namespace ModernArt.Forms
 
         private void btnLimpaCampos_Click(object sender, EventArgs e)
         {
-            foreach (TextBox textBox in Controls.OfType<TextBox>())
-                textBox.Text = "";
+            limpar();
         }
 
         private void TabelaProjetos_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
@@ -345,6 +345,22 @@ namespace ModernArt.Forms
                     break;
                 }
             }
+        }
+
+        private void limpar()
+        {
+            TabelaProjetos.ClearSelection();
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+                textBox.Text = "";
+            statusOrcamento.Checked = true;
+            comboFkClientes.SelectedIndex = 0;
+            comboFkDesigner.SelectedIndex = 0;
+            comboFkServicos.SelectedIndex = 0;
+        }
+
+        private void TabelaProjetos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            limpar();
         }
     }
 }
