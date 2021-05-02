@@ -40,17 +40,12 @@ namespace ModernArt.Forms
         }
 
         public void AtualizarViewServicos() {
-            comboServicos.Items.Clear();
             Dados dados = new Dados();
             List<Servico> listaServicos = dados.GetTodosServicos();
             TabelaServico.DataSource = listaServicos;
             TabelaServico.Columns["Id"].HeaderText = "ID";
             TabelaServico.Columns["ValorBase"].HeaderText = "Valor Base";
             TabelaServico.Columns["ValorBase"].DefaultCellStyle.Format = "C2";
-            foreach (Servico servico in listaServicos) {
-                comboServicos.Items.Add($"{servico.Id} - {servico.Nome}");
-            }
-            comboServicos.SelectedIndex = 0;
         }
         
 
@@ -64,49 +59,34 @@ namespace ModernArt.Forms
         {
             Dados dados = new Dados();
             dados.InserirServico(servicoNome.Text,
-                                 Convert.ToDouble(valorBaseServico.Text));
+                                 Convert.ToDouble(valorBaseServico.Text.Replace(".", ",")));
             AtualizarViewServicos();
             MessageBox.Show("Adicionado com sucesso.");
         }
      
         private void deletarServicos_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(comboServicos.SelectedItem.ToString().Split(' ')[0]);
+            var servico = (Servico)TabelaServico.CurrentRow.DataBoundItem;
             Dados dados = new Dados();
-            int resultadoOperacao = dados.DeletarServico(id);
+            int resultadoOperacao = dados.DeletarServico(servico.Id);
             AtualizarViewServicos();
             MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este serviço está cadastrado em um projeto!");
         }
 
         private void alterarServico_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(comboServicos.SelectedItem.ToString().Split(' ')[0]);
+            var servico = (Servico)TabelaServico.CurrentRow.DataBoundItem;
             Dados dados = new Dados();
-            dados.AtualizarServico(id, servicoNome.Text,
-                                 Convert.ToDouble(valorBaseServico.Text));
+            dados.AtualizarServico(servico.Id, servicoNome.Text,
+                                 Convert.ToDouble(valorBaseServico.Text.Replace(".", ",")));
             AtualizarViewServicos();
             MessageBox.Show("Alterado com sucesso.");
             
         }
 
-        private void comboServicos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(comboServicos.SelectedItem.ToString().Split(' ')[0]);
-            Dados dados = new Dados();
-            Servico servico = dados.GetServicoPorId(id);
-            servicoNome.Text = servico.Nome;
-            valorBaseServico.Text = Convert.ToString(servico.ValorBase);
-
-        }
-
         private void FormServicos_Load(object sender, EventArgs e)
         {
             LoadTheme();
-        }
-
-        private void TabelaServico_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -206,16 +186,6 @@ namespace ModernArt.Forms
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void valorBaseServico_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
         {
 
         }

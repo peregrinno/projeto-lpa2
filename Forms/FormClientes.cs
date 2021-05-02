@@ -40,16 +40,10 @@ namespace ModernArt.Forms
 
         private void AtualizaViewClientes()
         {
-            comboClientes.Items.Clear();
             Dados dados = new Dados();
             List<Cliente> listaClientes = dados.GetTodosClientes();
             TabelaCliente.DataSource = listaClientes;
             TabelaCliente.Columns["Id"].HeaderText = "ID";
-            foreach (Cliente cliente in listaClientes)
-            {
-                comboClientes.Items.Add($"{cliente.Id} - {cliente.Nome}");
-            }
-            comboClientes.SelectedIndex = 0;
         }
 
         private void adicionarCliente_Click(object sender, EventArgs e)
@@ -62,30 +56,20 @@ namespace ModernArt.Forms
 
         private void atualizarCliente_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(comboClientes.SelectedItem.ToString().Split(' ')[0]);
+            var cliente = (Cliente)TabelaCliente.CurrentRow.DataBoundItem;
             Dados dados = new Dados();
-            dados.AtualizarCliente(id, nomeCliente.Text, emailCliente.Text, telefoneCliente.Text);
+            dados.AtualizarCliente(cliente.Id, nomeCliente.Text, emailCliente.Text, telefoneCliente.Text);
             AtualizaViewClientes();
             MessageBox.Show("Alterado com sucesso!");
         }
 
         private void deletarCliente_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(comboClientes.SelectedItem.ToString().Split(' ')[0]);
+            var cliente = (Cliente)TabelaCliente.CurrentRow.DataBoundItem;
             Dados dados = new Dados();
-            int resultadoOperacao = dados.DeletarCliente(id);
+            int resultadoOperacao = dados.DeletarCliente(cliente.Id);
             AtualizaViewClientes();
             MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este cliente está cadastrado em um projeto!");
-        }
-
-        private void comboClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(comboClientes.SelectedItem.ToString().Split(' ')[0]);
-            Dados dados = new Dados();
-            Cliente cliente = dados.GetClientePorId(id);
-            nomeCliente.Text = cliente.Nome;
-            emailCliente.Text = cliente.Email; 
-            telefoneCliente.Text = cliente.Telefone;
         }
 
         //Metodo imprimir

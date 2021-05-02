@@ -40,17 +40,11 @@ namespace ModernArt.Forms
 
         public void AtualizaViewDesigners()
         {
-            comboDesigners.Items.Clear();
             Dados dados = new Dados();
             List<Designer> listaDesigners = dados.GetTodosDesigners();
             TabelaDesigner.DataSource = listaDesigners;
             TabelaDesigner.Columns["Id"].HeaderText = "ID";
             TabelaDesigner.Columns["Disponivel"].HeaderText = "Disponível";
-            foreach (Designer designer in listaDesigners)
-            {
-                comboDesigners.Items.Add($"{designer.Id} - {designer.Nome}");
-            }
-            comboDesigners.SelectedIndex = 0;
         }
 
         private void adicionarDesigner_Click(object sender, EventArgs e)
@@ -72,7 +66,7 @@ namespace ModernArt.Forms
 
         private void atualizarDesigner_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(comboDesigners.SelectedItem.ToString().Split(' ')[0]);
+            var designer = (Designer)TabelaDesigner.CurrentRow.DataBoundItem;
             bool designerDisponivel;
             if (designerTrue.Checked)
             {
@@ -83,36 +77,18 @@ namespace ModernArt.Forms
                 designerDisponivel = false;
             }
             Dados dados = new Dados();
-            dados.AtualizarDesigner(id, nomeDesigner.Text, telefoneDesigner.Text, emailDesigner.Text, designerDisponivel);
+            dados.AtualizarDesigner(designer.Id, nomeDesigner.Text, telefoneDesigner.Text, emailDesigner.Text, designerDisponivel);
             AtualizaViewDesigners();
             MessageBox.Show("Alterado com sucesso!");
         }
 
         private void deletarDesigner_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(comboDesigners.SelectedItem.ToString().Split(' ')[0]);
+            var designer = (Designer)TabelaDesigner.CurrentRow.DataBoundItem;
             Dados dados = new Dados();
-            int resultadoOperacao = dados.DeletarDesigner(id);
+            int resultadoOperacao = dados.DeletarDesigner(designer.Id);
             AtualizaViewDesigners();
             MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este designer está cadastrado em um projeto!");
-        }
-
-        private void comboDesigners_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(comboDesigners.SelectedItem.ToString().Split(' ')[0]);
-            Dados dados = new Dados();
-            Designer designer = dados.GetDesignerPorId(id);
-            nomeDesigner.Text = designer.Nome;
-            telefoneDesigner.Text = designer.Telefone;
-            emailDesigner.Text = designer.Email;
-            if (designer.Disponivel)
-            {
-                designerTrue.Checked = true;
-            }
-            else
-            {
-                designerFalse.Checked = true;
-            }
         }
 
         //Metodo imprimir

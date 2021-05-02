@@ -52,7 +52,6 @@ namespace ModernArt.Forms
             this.label8 = new System.Windows.Forms.Label();
             this.comboFkDesigner = new System.Windows.Forms.ComboBox();
             this.statusFinalizado = new System.Windows.Forms.RadioButton();
-            this.comboProjetos = new System.Windows.Forms.ComboBox();
             this.TabelaProjetos = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -267,17 +266,6 @@ namespace ModernArt.Forms
             this.statusFinalizado.Text = "Finalizado";
             this.statusFinalizado.UseVisualStyleBackColor = true;
             // 
-            // comboProjetos
-            // 
-            this.comboProjetos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboProjetos.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboProjetos.FormattingEnabled = true;
-            this.comboProjetos.Location = new System.Drawing.Point(12, 74);
-            this.comboProjetos.Name = "comboProjetos";
-            this.comboProjetos.Size = new System.Drawing.Size(314, 31);
-            this.comboProjetos.TabIndex = 40;
-            this.comboProjetos.SelectedIndexChanged += new System.EventHandler(this.comboProjetos_SelectedIndexChanged);
-            // 
             // TabelaProjetos
             // 
             this.TabelaProjetos.AllowUserToAddRows = false;
@@ -399,7 +387,6 @@ namespace ModernArt.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TabelaProjetos);
-            this.Controls.Add(this.comboProjetos);
             this.Controls.Add(this.statusFinalizado);
             this.Controls.Add(this.comboFkDesigner);
             this.Controls.Add(this.label8);
@@ -446,7 +433,6 @@ namespace ModernArt.Forms
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboFkDesigner;
         private System.Windows.Forms.RadioButton statusFinalizado;
-        private System.Windows.Forms.ComboBox comboProjetos;
         private System.Windows.Forms.DataGridView TabelaProjetos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
