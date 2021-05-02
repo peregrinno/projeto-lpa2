@@ -193,6 +193,26 @@ namespace ModernArt.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap relatorio {
+            get {
+                object obj = ResourceManager.GetObject("relatorio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap relatorio1 {
+            get {
+                object obj = ResourceManager.GetObject("relatorio1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap services_icon_branco {
             get {
                 object obj = ResourceManager.GetObject("services-icon-branco", resourceCulture);

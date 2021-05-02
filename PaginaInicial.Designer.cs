@@ -31,13 +31,7 @@ namespace ModernArt
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelAgencia));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnSobre = new System.Windows.Forms.Button();
-            this.btnProjetos = new System.Windows.Forms.Button();
-            this.btnServicos = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnDesigners = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -46,17 +40,25 @@ namespace ModernArt
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnBotaorelatorio = new System.Windows.Forms.Button();
+            this.btnSobre = new System.Windows.Forms.Button();
+            this.btnProjetos = new System.Windows.Forms.Button();
+            this.btnServicos = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnDesigners = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelDesktopPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnBotaorelatorio);
             this.panelMenu.Controls.Add(this.btnSobre);
             this.panelMenu.Controls.Add(this.btnProjetos);
             this.panelMenu.Controls.Add(this.btnServicos);
@@ -69,106 +71,6 @@ namespace ModernArt
             this.panelMenu.Size = new System.Drawing.Size(220, 581);
             this.panelMenu.TabIndex = 0;
             // 
-            // btnSobre
-            // 
-            this.btnSobre.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSobre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnSobre.FlatAppearance.BorderSize = 0;
-            this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSobre.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSobre.Image = global::ModernArt.Properties.Resources.info;
-            this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSobre.Location = new System.Drawing.Point(0, 531);
-            this.btnSobre.Name = "btnSobre";
-            this.btnSobre.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSobre.Size = new System.Drawing.Size(220, 50);
-            this.btnSobre.TabIndex = 4;
-            this.btnSobre.Text = "          Sobre";
-            this.btnSobre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSobre.UseVisualStyleBackColor = true;
-            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
-            // 
-            // btnProjetos
-            // 
-            this.btnProjetos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProjetos.FlatAppearance.BorderSize = 0;
-            this.btnProjetos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProjetos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProjetos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProjetos.Image = global::ModernArt.Properties.Resources.projects_icon_branco;
-            this.btnProjetos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProjetos.Location = new System.Drawing.Point(0, 260);
-            this.btnProjetos.Name = "btnProjetos";
-            this.btnProjetos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnProjetos.Size = new System.Drawing.Size(220, 60);
-            this.btnProjetos.TabIndex = 4;
-            this.btnProjetos.Text = "        Projetos";
-            this.btnProjetos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProjetos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProjetos.UseVisualStyleBackColor = true;
-            this.btnProjetos.Click += new System.EventHandler(this.btnProjetos_Click);
-            // 
-            // btnServicos
-            // 
-            this.btnServicos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnServicos.FlatAppearance.BorderSize = 0;
-            this.btnServicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServicos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnServicos.Image = global::ModernArt.Properties.Resources.services_icon_branco;
-            this.btnServicos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServicos.Location = new System.Drawing.Point(0, 200);
-            this.btnServicos.Name = "btnServicos";
-            this.btnServicos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnServicos.Size = new System.Drawing.Size(220, 60);
-            this.btnServicos.TabIndex = 3;
-            this.btnServicos.Text = "        Serviços";
-            this.btnServicos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServicos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnServicos.UseVisualStyleBackColor = true;
-            this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnClientes.Image = global::ModernArt.Properties.Resources.clientes_icon_branco;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 140);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnClientes.Size = new System.Drawing.Size(220, 60);
-            this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "        Clientes";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnDesigners
-            // 
-            this.btnDesigners.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDesigners.FlatAppearance.BorderSize = 0;
-            this.btnDesigners.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesigners.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesigners.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDesigners.Image = global::ModernArt.Properties.Resources.design_icon_branco1;
-            this.btnDesigners.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesigners.Location = new System.Drawing.Point(0, 80);
-            this.btnDesigners.Name = "btnDesigners";
-            this.btnDesigners.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnDesigners.Size = new System.Drawing.Size(220, 60);
-            this.btnDesigners.TabIndex = 1;
-            this.btnDesigners.Text = "        Designers";
-            this.btnDesigners.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesigners.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDesigners.UseVisualStyleBackColor = true;
-            this.btnDesigners.Click += new System.EventHandler(this.btnDesigners_Click);
-            // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -178,17 +80,6 @@ namespace ModernArt
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(220, 80);
             this.panelLogo.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::ModernArt.Properties.Resources.doca220;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::ModernArt.Properties.Resources.logo_agencia;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 80);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panelDesktopPane
             // 
@@ -307,6 +198,133 @@ namespace ModernArt
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "HOME";
             // 
+            // btnBotaorelatorio
+            // 
+            this.btnBotaorelatorio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBotaorelatorio.FlatAppearance.BorderSize = 0;
+            this.btnBotaorelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBotaorelatorio.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBotaorelatorio.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnBotaorelatorio.Image = global::ModernArt.Properties.Resources.relatorio;
+            this.btnBotaorelatorio.Location = new System.Drawing.Point(0, 320);
+            this.btnBotaorelatorio.Name = "btnBotaorelatorio";
+            this.btnBotaorelatorio.Size = new System.Drawing.Size(220, 60);
+            this.btnBotaorelatorio.TabIndex = 5;
+            this.btnBotaorelatorio.Text = "   Relatórios";
+            this.btnBotaorelatorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBotaorelatorio.UseVisualStyleBackColor = true;
+            // 
+            // btnSobre
+            // 
+            this.btnSobre.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSobre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnSobre.FlatAppearance.BorderSize = 0;
+            this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSobre.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSobre.Image = global::ModernArt.Properties.Resources.info;
+            this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSobre.Location = new System.Drawing.Point(0, 531);
+            this.btnSobre.Name = "btnSobre";
+            this.btnSobre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSobre.Size = new System.Drawing.Size(220, 50);
+            this.btnSobre.TabIndex = 4;
+            this.btnSobre.Text = "          Sobre";
+            this.btnSobre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSobre.UseVisualStyleBackColor = true;
+            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
+            // 
+            // btnProjetos
+            // 
+            this.btnProjetos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProjetos.FlatAppearance.BorderSize = 0;
+            this.btnProjetos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProjetos.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProjetos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnProjetos.Image = global::ModernArt.Properties.Resources.projects_icon_branco;
+            this.btnProjetos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProjetos.Location = new System.Drawing.Point(0, 260);
+            this.btnProjetos.Name = "btnProjetos";
+            this.btnProjetos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnProjetos.Size = new System.Drawing.Size(220, 60);
+            this.btnProjetos.TabIndex = 4;
+            this.btnProjetos.Text = "        Projetos";
+            this.btnProjetos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProjetos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProjetos.UseVisualStyleBackColor = true;
+            this.btnProjetos.Click += new System.EventHandler(this.btnProjetos_Click);
+            // 
+            // btnServicos
+            // 
+            this.btnServicos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnServicos.FlatAppearance.BorderSize = 0;
+            this.btnServicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServicos.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServicos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnServicos.Image = global::ModernArt.Properties.Resources.services_icon_branco;
+            this.btnServicos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnServicos.Location = new System.Drawing.Point(0, 200);
+            this.btnServicos.Name = "btnServicos";
+            this.btnServicos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnServicos.Size = new System.Drawing.Size(220, 60);
+            this.btnServicos.TabIndex = 3;
+            this.btnServicos.Text = "        Serviços";
+            this.btnServicos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnServicos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnServicos.UseVisualStyleBackColor = true;
+            this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnClientes.Image = global::ModernArt.Properties.Resources.clientes_icon_branco;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(0, 140);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnClientes.Size = new System.Drawing.Size(220, 60);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "        Clientes";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnDesigners
+            // 
+            this.btnDesigners.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDesigners.FlatAppearance.BorderSize = 0;
+            this.btnDesigners.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesigners.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesigners.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDesigners.Image = global::ModernArt.Properties.Resources.design_icon_branco1;
+            this.btnDesigners.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesigners.Location = new System.Drawing.Point(0, 80);
+            this.btnDesigners.Name = "btnDesigners";
+            this.btnDesigners.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnDesigners.Size = new System.Drawing.Size(220, 60);
+            this.btnDesigners.TabIndex = 1;
+            this.btnDesigners.Text = "        Designers";
+            this.btnDesigners.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesigners.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDesigners.UseVisualStyleBackColor = true;
+            this.btnDesigners.Click += new System.EventHandler(this.btnDesigners_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::ModernArt.Properties.Resources.doca220;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::ModernArt.Properties.Resources.logo_agencia;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(220, 80);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // PanelAgencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,12 +340,12 @@ namespace ModernArt
             this.Load += new System.EventHandler(this.PanelAgencia_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelDesktopPane.ResumeLayout(false);
             this.panelDesktopPane.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,6 +368,7 @@ namespace ModernArt
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSobre;
+        private System.Windows.Forms.Button btnBotaorelatorio;
     }
 }
 
