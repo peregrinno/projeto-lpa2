@@ -92,9 +92,9 @@ namespace ModernArt.Forms
         {
             int id = Convert.ToInt32(comboDesigners.SelectedItem.ToString().Split(' ')[0]);
             Dados dados = new Dados();
-            dados.DeletarDesigner(id);
+            int resultadoOperacao = dados.DeletarDesigner(id);
             AtualizaViewDesigners();
-            MessageBox.Show("Deletado com sucesso.");
+            MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este designer está cadastrado em um projeto!");
         }
 
         private void comboDesigners_SelectedIndexChanged(object sender, EventArgs e)

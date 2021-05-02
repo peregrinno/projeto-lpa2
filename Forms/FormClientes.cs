@@ -73,9 +73,9 @@ namespace ModernArt.Forms
         {
             int id = Convert.ToInt32(comboClientes.SelectedItem.ToString().Split(' ')[0]);
             Dados dados = new Dados();
-            dados.DeletarCliente(id);
+            int resultadoOperacao = dados.DeletarCliente(id);
             AtualizaViewClientes();
-            MessageBox.Show("Deletado com sucesso.");
+            MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este cliente está cadastrado em um projeto!");
         }
 
         private void comboClientes_SelectedIndexChanged(object sender, EventArgs e)

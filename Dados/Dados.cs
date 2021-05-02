@@ -158,7 +158,7 @@ namespace ModernArt
         /// <summary>
         /// Este método deleta uma entrada da tabela <b>servicos</b> com base no ID
         /// </summary>
-        public void DeletarServico(int id)
+        public int DeletarServico(int id)
         {
             // Cria objeto da conexão com o banco de dados e escopo deste objeto
             using (NpgsqlConnection conexao = new NpgsqlConnection(config))
@@ -168,15 +168,26 @@ namespace ModernArt
                 // Declara sentença SQL
                 string deletar = "DELETE FROM public.servicos WHERE id = @id;";
                 // Cria escopo e objeto do comando SQL utilizando a sentença e a conexão como parâmetros
-                using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                try
                 {
-                    // Adiciona os parâmetros ao comando
-                    comando.Parameters.AddWithValue("id", id);
-                    // Executa o comando SQL no banco de dados
-                    comando.ExecuteNonQuery();
+                    using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                    {
+                        // Adiciona os parâmetros ao comando
+                        comando.Parameters.AddWithValue("id", id);
+                        // Executa o comando SQL no banco de dados
+                        comando.ExecuteNonQuery();
+                        conexao.Close();
+                        return 0;
+                    }
                 }
-                // Fecha a conexão com o banco de dados
-                conexao.Close();
+                catch (NpgsqlException ex)
+                {
+                    if (ex.ErrorCode.Equals(23503))
+                    {
+                        return -1;
+                    }
+                    return -1;
+                }
             }
         }
 
@@ -306,18 +317,30 @@ namespace ModernArt
         /// <summary>
         /// Este método deleta uma entrada da tabela <b>designers</b> com base no ID
         /// </summary>
-        public void DeletarDesigner(int id)
+        public int DeletarDesigner(int id)
         {
             using (NpgsqlConnection conexao = new NpgsqlConnection(config))
             {
                 conexao.Open();
                 string deletar = "DELETE FROM public.designers WHERE id = @id;";
-                using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                try
                 {
-                    comando.Parameters.AddWithValue("id", id);
-                    comando.ExecuteNonQuery();
+                    using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                    {
+                        comando.Parameters.AddWithValue("id", id);
+                        comando.ExecuteNonQuery();
+                    }
+                    conexao.Close();
+                    return 0;
                 }
-                conexao.Close();
+                catch (NpgsqlException ex)
+                {
+                    if (ex.ErrorCode.Equals(23503))
+                    {
+                        return -1;
+                    }
+                    return -1;
+                }
             }
         }
 
@@ -442,18 +465,30 @@ namespace ModernArt
         /// <summary>
         /// Este método deleta uma entrada da tabela <b>clientes</b> com base no ID
         /// </summary>
-        public void DeletarCliente(int id)
+        public int DeletarCliente(int id)
         {
             using (NpgsqlConnection conexao = new NpgsqlConnection(config))
             {
                 conexao.Open();
                 string deletar = "DELETE FROM public.clientes WHERE id = @id;";
-                using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                try
                 {
-                    comando.Parameters.AddWithValue("id", id);
-                    comando.ExecuteNonQuery();
+                    using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
+                    {
+                        comando.Parameters.AddWithValue("id", id);
+                        comando.ExecuteNonQuery();
+                    }
+                    conexao.Close();
+                    return 0;
                 }
-                conexao.Close();
+                catch (NpgsqlException ex)
+                {
+                    if (ex.ErrorCode.Equals(23503))
+                    {
+                        return -1;
+                    }
+                    return -1;
+                }
             }
         }
 

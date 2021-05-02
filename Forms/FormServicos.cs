@@ -73,9 +73,9 @@ namespace ModernArt.Forms
         {
             int id = Convert.ToInt32(comboServicos.SelectedItem.ToString().Split(' ')[0]);
             Dados dados = new Dados();
-            dados.DeletarServico(id);
+            int resultadoOperacao = dados.DeletarServico(id);
             AtualizarViewServicos();
-            MessageBox.Show("Deletado com sucesso.");
+            MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este serviço está cadastrado em um projeto!");
         }
 
         private void alterarServico_Click(object sender, EventArgs e)
