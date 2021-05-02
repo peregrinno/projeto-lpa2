@@ -46,6 +46,7 @@ namespace ModernArt.Forms
             TabelaServico.DataSource = listaServicos;
             TabelaServico.Columns["Id"].HeaderText = "ID";
             TabelaServico.Columns["ValorBase"].HeaderText = "Valor Base";
+            TabelaServico.Columns["ValorBase"].DefaultCellStyle.Format = "C2";
             foreach (Servico servico in listaServicos) {
                 comboServicos.Items.Add($"{servico.Id} - {servico.Nome}");
             }

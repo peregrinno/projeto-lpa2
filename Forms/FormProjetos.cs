@@ -76,6 +76,7 @@ namespace ModernArt.Forms
             TabelaProjetos.DataSource = listaProjetos;
             TabelaProjetos.Columns["Servico"].HeaderText = "Serviço";
             TabelaProjetos.Columns["ValorFinal"].HeaderText = "Valor Final";
+            TabelaProjetos.Columns["ValorFinal"].DefaultCellStyle.Format = "C2";
             TabelaProjetos.Columns["Id"].HeaderText = "ID";
             foreach (Projeto projeto in listaProjetos)
             {
@@ -138,6 +139,7 @@ namespace ModernArt.Forms
             int id = Convert.ToInt32(comboProjetos.SelectedItem.ToString().Split(' ')[0]);
             Dados dados = new Dados();
             dados.DeletarProjeto(id);
+            AtualizaViewProjetos();
             MessageBox.Show("Deletado com sucesso!");
         }
 
