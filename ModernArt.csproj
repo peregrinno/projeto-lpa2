@@ -240,6 +240,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\relatorio.png" />
     <None Include="Resources\logo-upe.png" />
     <None Include="Resources\info.png" />
     <None Include="Resources\limpar.png" />
@@ -247,6 +248,7 @@
     <None Include="imagens\brancos\doca220.png" />
     <None Include="imagens\brancos\doca1700.png" />
     <Content Include="icone1.ico" />
+    <None Include="imagens\brancos\relatorio.png" />
     <Content Include="logo-agencia-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
