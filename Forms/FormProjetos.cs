@@ -69,7 +69,14 @@ namespace ModernArt.Forms
             comboProjetos.Items.Clear();
             Dados dados = new Dados();
             List<Projeto> listaProjetos = dados.GetTodosProjetos();
+            foreach (var projeto in listaProjetos)
+            {
+
+            }
             TabelaProjetos.DataSource = listaProjetos;
+            TabelaProjetos.Columns["Servico"].HeaderText = "Serviço";
+            TabelaProjetos.Columns["ValorFinal"].HeaderText = "Valor Final";
+            TabelaProjetos.Columns["Id"].HeaderText = "ID";
             foreach (Projeto projeto in listaProjetos)
             {
                 comboProjetos.Items.Add($"{projeto.Id} - {projeto.Nome}");
@@ -284,6 +291,60 @@ namespace ModernArt.Forms
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             imprimir();
+        }
+
+        private void btnLimpaCampos_Click(object sender, EventArgs e)
+        {
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+                textBox.Text = "";
+        }
+
+        private void TabelaProjetos_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void TabelaProjetos_SelectionChanged(object sender, EventArgs e)
+        {
+            var projeto = (Projeto)TabelaProjetos.CurrentRow.DataBoundItem;
+            nomeProjeto.Text = projeto.Nome;
+            valorProjeto.Text = Convert.ToString(projeto.ValorFinal);
+            if (projeto.Status == 'O')
+            {
+                statusOrcamento.Checked = true;
+            }
+            else if (projeto.Status == 'A')
+            {
+                statusAndamento.Checked = true;
+            }
+            else
+            {
+                statusFinalizado.Checked = true;
+            }
+            foreach (var item in comboFkClientes.Items)
+            {
+                if (projeto.Cliente.Id == Convert.ToInt32(item.ToString().Split(' ')[0]))
+                {
+                    comboFkClientes.SelectedItem = item;
+                    break;
+                }
+            }
+            foreach (var item in comboFkDesigner.Items)
+            {
+                if (projeto.Designer.Id == Convert.ToInt32(item.ToString().Split(' ')[0]))
+                {
+                    comboFkDesigner.SelectedItem = item;
+                    break;
+                }
+            }
+            foreach (var item in comboFkServicos.Items)
+            {
+                if (projeto.Servico.Id == Convert.ToInt32(item.ToString().Split(' ')[0]))
+                {
+                    comboFkServicos.SelectedItem = item;
+                    break;
+                }
+            }
         }
     }
 }

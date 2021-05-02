@@ -44,6 +44,7 @@ namespace ModernArt.Forms
             Dados dados = new Dados();
             List<Cliente> listaClientes = dados.GetTodosClientes();
             TabelaCliente.DataSource = listaClientes;
+            TabelaCliente.Columns["Id"].HeaderText = "ID";
             foreach (Cliente cliente in listaClientes)
             {
                 comboClientes.Items.Add($"{cliente.Id} - {cliente.Nome}");
@@ -165,6 +166,25 @@ namespace ModernArt.Forms
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             imprimir();
+        }
+
+        private void btnLimpaCampos_Click(object sender, EventArgs e)
+        {
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+                textBox.Text = "";
+        }
+
+        private void TabelaCliente_SelectionChanged(object sender, EventArgs e)
+        {
+            var cliente = (Cliente)TabelaCliente.CurrentRow.DataBoundItem;
+            nomeCliente.Text = cliente.Nome;
+            emailCliente.Text = cliente.Email; 
+            telefoneCliente.Text = cliente.Telefone;
+        }
+
+        private void TabelaCliente_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
     }
 }

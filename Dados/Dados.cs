@@ -615,7 +615,7 @@ namespace ModernArt
             using (NpgsqlConnection conexao = new NpgsqlConnection(config))
             {
                 conexao.Open();
-                string deletar = "DELETE FROM public.projeto WHERE id = @id;";
+                string deletar = "DELETE FROM public.projetos WHERE id = @id;";
                 using (NpgsqlCommand comando = new NpgsqlCommand(deletar, conexao))
                 {
                     comando.Parameters.AddWithValue("id", id);

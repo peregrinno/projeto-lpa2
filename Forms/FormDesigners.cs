@@ -44,6 +44,8 @@ namespace ModernArt.Forms
             Dados dados = new Dados();
             List<Designer> listaDesigners = dados.GetTodosDesigners();
             TabelaDesigner.DataSource = listaDesigners;
+            TabelaDesigner.Columns["Id"].HeaderText = "ID";
+            TabelaDesigner.Columns["Disponivel"].HeaderText = "Disponível";
             foreach (Designer designer in listaDesigners)
             {
                 comboDesigners.Items.Add($"{designer.Id} - {designer.Nome}");
@@ -201,6 +203,33 @@ namespace ModernArt.Forms
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             imprimir();
+        }
+
+        private void btnLimpaCampos_Click(object sender, EventArgs e)
+        {
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+                textBox.Text = "";
+        }
+
+        private void TabelaDesigner_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void TabelaDesigner_SelectionChanged(object sender, EventArgs e)
+        {
+            var designer = (Designer)TabelaDesigner.CurrentRow.DataBoundItem;
+            nomeDesigner.Text = designer.Nome;
+            telefoneDesigner.Text = designer.Telefone;
+            emailDesigner.Text = designer.Email;
+            if (designer.Disponivel)
+            {
+                designerTrue.Checked = true;
+            }
+            else
+            {
+                designerFalse.Checked = true;
+            }
         }
     }
 }

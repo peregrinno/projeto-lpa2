@@ -280,7 +280,10 @@ namespace ModernArt.Forms
             // 
             // TabelaProjetos
             // 
-            this.TabelaProjetos.AllowUserToOrderColumns = true;
+            this.TabelaProjetos.AllowUserToAddRows = false;
+            this.TabelaProjetos.AllowUserToDeleteRows = false;
+            this.TabelaProjetos.AllowUserToResizeColumns = false;
+            this.TabelaProjetos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -315,7 +318,9 @@ namespace ModernArt.Forms
             this.TabelaProjetos.DefaultCellStyle = dataGridViewCellStyle3;
             this.TabelaProjetos.GridColor = System.Drawing.Color.White;
             this.TabelaProjetos.Location = new System.Drawing.Point(12, 188);
+            this.TabelaProjetos.MultiSelect = false;
             this.TabelaProjetos.Name = "TabelaProjetos";
+            this.TabelaProjetos.ReadOnly = true;
             this.TabelaProjetos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
@@ -326,13 +331,17 @@ namespace ModernArt.Forms
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.TabelaProjetos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.TabelaProjetos.RowHeadersVisible = false;
+            this.TabelaProjetos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GrayText;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             this.TabelaProjetos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.TabelaProjetos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TabelaProjetos.Size = new System.Drawing.Size(776, 250);
             this.TabelaProjetos.TabIndex = 41;
+            this.TabelaProjetos.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.TabelaProjetos_ColumnAdded);
+            this.TabelaProjetos.SelectionChanged += new System.EventHandler(this.TabelaProjetos_SelectionChanged);
             // 
             // panel1
             // 
@@ -361,6 +370,7 @@ namespace ModernArt.Forms
             this.btnLimpaCampos.Size = new System.Drawing.Size(32, 32);
             this.btnLimpaCampos.TabIndex = 43;
             this.btnLimpaCampos.UseVisualStyleBackColor = false;
+            this.btnLimpaCampos.Click += new System.EventHandler(this.btnLimpaCampos_Click);
             // 
             // btnImprimir
             // 

@@ -44,6 +44,8 @@ namespace ModernArt.Forms
             Dados dados = new Dados();
             List<Servico> listaServicos = dados.GetTodosServicos();
             TabelaServico.DataSource = listaServicos;
+            TabelaServico.Columns["Id"].HeaderText = "ID";
+            TabelaServico.Columns["ValorBase"].HeaderText = "Valor Base";
             foreach (Servico servico in listaServicos) {
                 comboServicos.Items.Add($"{servico.Id} - {servico.Nome}");
             }
@@ -182,6 +184,24 @@ namespace ModernArt.Forms
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             imprimir();
+        }
+
+        private void btnLimpaCampos_Click(object sender, EventArgs e)
+        {
+            foreach (TextBox textBox in Controls.OfType<TextBox>())
+                textBox.Text = "";
+        }
+
+        private void TabelaServico_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void TabelaServico_SelectionChanged(object sender, EventArgs e)
+        {
+            var servico = (Servico)TabelaServico.CurrentRow.DataBoundItem;
+            servicoNome.Text = servico.Nome;
+            valorBaseServico.Text = Convert.ToString(servico.ValorBase);
         }
     }
 }
