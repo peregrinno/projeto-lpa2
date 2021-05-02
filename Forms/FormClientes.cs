@@ -186,5 +186,10 @@ namespace ModernArt.Forms
         {
             e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
+
+        private void emailCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

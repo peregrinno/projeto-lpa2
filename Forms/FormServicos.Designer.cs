@@ -29,11 +29,11 @@ namespace ModernArt.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
             this.valorBaseServico = new System.Windows.Forms.TextBox();
             this.servicoNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,54 +55,56 @@ namespace ModernArt.Forms
             // 
             this.valorBaseServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.valorBaseServico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.valorBaseServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.valorBaseServico.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valorBaseServico.ForeColor = System.Drawing.SystemColors.Window;
-            this.valorBaseServico.Location = new System.Drawing.Point(25, 126);
+            this.valorBaseServico.Location = new System.Drawing.Point(27, 132);
             this.valorBaseServico.Name = "valorBaseServico";
-            this.valorBaseServico.Size = new System.Drawing.Size(224, 16);
+            this.valorBaseServico.Size = new System.Drawing.Size(248, 25);
             this.valorBaseServico.TabIndex = 25;
+            this.valorBaseServico.TextChanged += new System.EventHandler(this.valorBaseServico_TextChanged);
             // 
             // servicoNome
             // 
             this.servicoNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.servicoNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.servicoNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.servicoNome.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicoNome.ForeColor = System.Drawing.SystemColors.Window;
-            this.servicoNome.Location = new System.Drawing.Point(25, 72);
+            this.servicoNome.Location = new System.Drawing.Point(27, 68);
             this.servicoNome.Name = "servicoNome";
-            this.servicoNome.Size = new System.Drawing.Size(224, 16);
+            this.servicoNome.Size = new System.Drawing.Size(244, 25);
             this.servicoNome.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(338, 21);
+            this.label4.Location = new System.Drawing.Point(343, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 26);
+            this.label4.Size = new System.Drawing.Size(99, 29);
             this.label4.TabIndex = 23;
             this.label4.Text = "Serviços";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Font = new System.Drawing.Font("Myanmar Text", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(22, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 17);
+            this.label2.Size = new System.Drawing.Size(50, 29);
             this.label2.TabIndex = 21;
             this.label2.Text = "Valor";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 12F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(22, 55);
+            this.label1.Location = new System.Drawing.Point(22, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(56, 29);
             this.label1.TabIndex = 20;
             this.label1.Text = "Nome";
             // 
@@ -110,9 +112,9 @@ namespace ModernArt.Forms
             // 
             this.AddServico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.AddServico.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddServico.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.AddServico.Location = new System.Drawing.Point(338, 363);
+            this.AddServico.Location = new System.Drawing.Point(565, 401);
             this.AddServico.Name = "AddServico";
             this.AddServico.Size = new System.Drawing.Size(127, 38);
             this.AddServico.TabIndex = 18;
@@ -124,9 +126,9 @@ namespace ModernArt.Forms
             // 
             this.alterarServico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.alterarServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.alterarServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.alterarServico.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alterarServico.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.alterarServico.Location = new System.Drawing.Point(486, 363);
+            this.alterarServico.Location = new System.Drawing.Point(712, 401);
             this.alterarServico.Name = "alterarServico";
             this.alterarServico.Size = new System.Drawing.Size(127, 38);
             this.alterarServico.TabIndex = 17;
@@ -138,9 +140,9 @@ namespace ModernArt.Forms
             // 
             this.deletarServicos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.deletarServicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deletarServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.deletarServicos.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletarServicos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deletarServicos.Location = new System.Drawing.Point(632, 363);
+            this.deletarServicos.Location = new System.Drawing.Point(859, 401);
             this.deletarServicos.Name = "deletarServicos";
             this.deletarServicos.Size = new System.Drawing.Size(127, 38);
             this.deletarServicos.TabIndex = 16;
@@ -152,11 +154,11 @@ namespace ModernArt.Forms
             // 
             this.comboServicos.BackColor = System.Drawing.SystemColors.ControlLight;
             this.comboServicos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboServicos.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboServicos.FormattingEnabled = true;
-            this.comboServicos.Location = new System.Drawing.Point(25, 215);
+            this.comboServicos.Location = new System.Drawing.Point(31, 256);
             this.comboServicos.Name = "comboServicos";
-            this.comboServicos.Size = new System.Drawing.Size(244, 24);
+            this.comboServicos.Size = new System.Drawing.Size(244, 31);
             this.comboServicos.TabIndex = 32;
             this.comboServicos.SelectedIndexChanged += new System.EventHandler(this.comboServicos_SelectedIndexChanged);
             // 
@@ -166,13 +168,13 @@ namespace ModernArt.Forms
             this.TabelaServico.AllowUserToDeleteRows = false;
             this.TabelaServico.AllowUserToResizeColumns = false;
             this.TabelaServico.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.TabelaServico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle76.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle76.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle76.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.TabelaServico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle76;
             this.TabelaServico.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -181,45 +183,45 @@ namespace ModernArt.Forms
             this.TabelaServico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TabelaServico.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.TabelaServico.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TabelaServico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle77.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaServico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle77;
             this.TabelaServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TabelaServico.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle78.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle78.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TabelaServico.DefaultCellStyle = dataGridViewCellStyle78;
             this.TabelaServico.GridColor = System.Drawing.Color.White;
             this.TabelaServico.Location = new System.Drawing.Point(338, 50);
             this.TabelaServico.MultiSelect = false;
             this.TabelaServico.Name = "TabelaServico";
             this.TabelaServico.ReadOnly = true;
             this.TabelaServico.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TabelaServico.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle79.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle79.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle79.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaServico.RowHeadersDefaultCellStyle = dataGridViewCellStyle79;
             this.TabelaServico.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.TabelaServico.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle80.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle80.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle80.ForeColor = System.Drawing.Color.White;
+            this.TabelaServico.RowsDefaultCellStyle = dataGridViewCellStyle80;
             this.TabelaServico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TabelaServico.Size = new System.Drawing.Size(421, 307);
+            this.TabelaServico.Size = new System.Drawing.Size(649, 345);
             this.TabelaServico.TabIndex = 33;
             this.TabelaServico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaServico_CellContentClick);
             this.TabelaServico.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.TabelaServico_ColumnAdded);
@@ -228,7 +230,7 @@ namespace ModernArt.Forms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(25, 93);
+            this.panel3.Location = new System.Drawing.Point(27, 89);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(248, 2);
             this.panel3.TabIndex = 35;
@@ -236,20 +238,23 @@ namespace ModernArt.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(25, 147);
+            this.panel1.Location = new System.Drawing.Point(27, 153);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 2);
             this.panel1.TabIndex = 34;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnLimpaCampos
             // 
             this.btnLimpaCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
             this.btnLimpaCampos.BackgroundImage = global::ModernArt.Properties.Resources.limpar;
-            this.btnLimpaCampos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpaCampos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLimpaCampos.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnLimpaCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpaCampos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
-            this.btnLimpaCampos.Location = new System.Drawing.Point(237, 164);
+            this.btnLimpaCampos.Location = new System.Drawing.Point(228, 192);
             this.btnLimpaCampos.Name = "btnLimpaCampos";
-            this.btnLimpaCampos.Size = new System.Drawing.Size(32, 32);
+            this.btnLimpaCampos.Size = new System.Drawing.Size(47, 47);
             this.btnLimpaCampos.TabIndex = 36;
             this.btnLimpaCampos.UseVisualStyleBackColor = false;
             this.btnLimpaCampos.Click += new System.EventHandler(this.btnLimpaCampos_Click);
@@ -258,9 +263,9 @@ namespace ModernArt.Forms
             // 
             this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnImprimir.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnImprimir.Location = new System.Drawing.Point(190, 363);
+            this.btnImprimir.Location = new System.Drawing.Point(418, 401);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(127, 38);
             this.btnImprimir.TabIndex = 37;
@@ -273,7 +278,7 @@ namespace ModernArt.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1028, 482);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnLimpaCampos);
             this.Controls.Add(this.panel3);

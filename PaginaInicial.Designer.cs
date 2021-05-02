@@ -68,7 +68,7 @@ namespace ModernArt
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 581);
+            this.panelMenu.Size = new System.Drawing.Size(220, 601);
             this.panelMenu.TabIndex = 0;
             // 
             // panelLogo
@@ -87,7 +87,7 @@ namespace ModernArt
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(220, 80);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(864, 501);
+            this.panelDesktopPane.Size = new System.Drawing.Size(1044, 521);
             this.panelDesktopPane.TabIndex = 2;
             this.panelDesktopPane.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktopPane_Paint);
             // 
@@ -95,7 +95,7 @@ namespace ModernArt
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::ModernArt.Properties.Resources.logo_agencia_home;
-            this.pictureBox2.Location = new System.Drawing.Point(145, 71);
+            this.pictureBox2.Location = new System.Drawing.Point(235, 81);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(580, 370);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -114,7 +114,7 @@ namespace ModernArt
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(864, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(1044, 80);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown_1);
             // 
@@ -126,7 +126,7 @@ namespace ModernArt
             this.btnMiniminize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMiniminize.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMiniminize.ForeColor = System.Drawing.Color.White;
-            this.btnMiniminize.Location = new System.Drawing.Point(765, 3);
+            this.btnMiniminize.Location = new System.Drawing.Point(945, 3);
             this.btnMiniminize.Margin = new System.Windows.Forms.Padding(0);
             this.btnMiniminize.Name = "btnMiniminize";
             this.btnMiniminize.Size = new System.Drawing.Size(24, 24);
@@ -144,7 +144,7 @@ namespace ModernArt
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(800, 3);
+            this.btnMaximize.Location = new System.Drawing.Point(980, 3);
             this.btnMaximize.Margin = new System.Windows.Forms.Padding(0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(24, 24);
@@ -162,7 +162,7 @@ namespace ModernArt
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(834, 3);
+            this.btnClose.Location = new System.Drawing.Point(1014, 3);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(24, 24);
@@ -192,7 +192,7 @@ namespace ModernArt
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(399, 24);
+            this.lblTitle.Location = new System.Drawing.Point(489, 24);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(85, 30);
             this.lblTitle.TabIndex = 0;
@@ -213,6 +213,7 @@ namespace ModernArt
             this.btnBotaorelatorio.Text = "   Relatórios";
             this.btnBotaorelatorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBotaorelatorio.UseVisualStyleBackColor = true;
+            this.btnBotaorelatorio.Click += new System.EventHandler(this.btnBotaorelatorio_Click);
             // 
             // btnSobre
             // 
@@ -224,7 +225,7 @@ namespace ModernArt
             this.btnSobre.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnSobre.Image = global::ModernArt.Properties.Resources.info;
             this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSobre.Location = new System.Drawing.Point(0, 531);
+            this.btnSobre.Location = new System.Drawing.Point(0, 551);
             this.btnSobre.Name = "btnSobre";
             this.btnSobre.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSobre.Size = new System.Drawing.Size(220, 50);
@@ -329,12 +330,12 @@ namespace ModernArt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 581);
+            this.ClientSize = new System.Drawing.Size(1264, 601);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1100, 620);
+            this.MinimumSize = new System.Drawing.Size(1280, 640);
             this.Name = "PanelAgencia";
             this.Text = "Coral - Agência digital";
             this.Load += new System.EventHandler(this.PanelAgencia_Load);

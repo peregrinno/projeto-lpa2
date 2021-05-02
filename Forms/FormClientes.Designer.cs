@@ -29,11 +29,11 @@ namespace ModernArt.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle136 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle137 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle138 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle139 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle140 = new System.Windows.Forms.DataGridViewCellStyle();
             this.emailCliente = new System.Windows.Forms.TextBox();
             this.telefoneCliente = new System.Windows.Forms.TextBox();
             this.nomeCliente = new System.Windows.Forms.TextBox();
@@ -58,76 +58,77 @@ namespace ModernArt.Forms
             // 
             this.emailCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(78)))));
             this.emailCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.emailCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailCliente.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailCliente.ForeColor = System.Drawing.SystemColors.Window;
-            this.emailCliente.Location = new System.Drawing.Point(28, 215);
+            this.emailCliente.Location = new System.Drawing.Point(28, 196);
             this.emailCliente.Name = "emailCliente";
-            this.emailCliente.Size = new System.Drawing.Size(247, 19);
+            this.emailCliente.Size = new System.Drawing.Size(247, 25);
             this.emailCliente.TabIndex = 18;
+            this.emailCliente.TextChanged += new System.EventHandler(this.emailCliente_TextChanged);
             // 
             // telefoneCliente
             // 
             this.telefoneCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(78)))));
             this.telefoneCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.telefoneCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telefoneCliente.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefoneCliente.ForeColor = System.Drawing.SystemColors.Window;
-            this.telefoneCliente.Location = new System.Drawing.Point(28, 155);
+            this.telefoneCliente.Location = new System.Drawing.Point(28, 132);
             this.telefoneCliente.Name = "telefoneCliente";
-            this.telefoneCliente.Size = new System.Drawing.Size(210, 19);
+            this.telefoneCliente.Size = new System.Drawing.Size(210, 25);
             this.telefoneCliente.TabIndex = 17;
             // 
             // nomeCliente
             // 
             this.nomeCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(78)))));
             this.nomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeCliente.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeCliente.ForeColor = System.Drawing.SystemColors.Window;
-            this.nomeCliente.Location = new System.Drawing.Point(28, 94);
+            this.nomeCliente.Location = new System.Drawing.Point(29, 68);
             this.nomeCliente.Name = "nomeCliente";
-            this.nomeCliente.Size = new System.Drawing.Size(247, 19);
+            this.nomeCliente.Size = new System.Drawing.Size(247, 25);
             this.nomeCliente.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(28, 198);
+            this.label3.Location = new System.Drawing.Point(22, 172);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 17);
+            this.label3.Size = new System.Drawing.Size(51, 29);
             this.label3.TabIndex = 15;
             this.label3.Text = "Email";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(28, 136);
+            this.label2.Location = new System.Drawing.Point(22, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(72, 29);
             this.label2.TabIndex = 14;
             this.label2.Text = "Telefone";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(28, 74);
+            this.label1.Location = new System.Drawing.Point(22, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(56, 29);
             this.label1.TabIndex = 13;
             this.label1.Text = "Nome";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(341, 21);
+            this.label4.Location = new System.Drawing.Point(343, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 26);
+            this.label4.Size = new System.Drawing.Size(99, 29);
             this.label4.TabIndex = 28;
             this.label4.Text = "Clientes";
             // 
@@ -137,13 +138,13 @@ namespace ModernArt.Forms
             this.TabelaCliente.AllowUserToDeleteRows = false;
             this.TabelaCliente.AllowUserToResizeColumns = false;
             this.TabelaCliente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.TabelaCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle136.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle136.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle136.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle136.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle136.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle136.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.TabelaCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle136;
             this.TabelaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -152,47 +153,47 @@ namespace ModernArt.Forms
             this.TabelaCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TabelaCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.TabelaCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TabelaCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle137.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle137.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle137.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle137.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle137.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle137.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle137.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle137;
             this.TabelaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TabelaCliente.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle138.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle138.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle138.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle138.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle138.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle138.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle138.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TabelaCliente.DefaultCellStyle = dataGridViewCellStyle138;
             this.TabelaCliente.GridColor = System.Drawing.Color.White;
             this.TabelaCliente.Location = new System.Drawing.Point(338, 50);
             this.TabelaCliente.MultiSelect = false;
             this.TabelaCliente.Name = "TabelaCliente";
             this.TabelaCliente.ReadOnly = true;
             this.TabelaCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TabelaCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle139.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle139.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle139.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle139.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle139.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle139.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle139.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle139;
             this.TabelaCliente.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.TabelaCliente.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle140.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle140.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle140.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle140.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle140.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle140.SelectionForeColor = System.Drawing.Color.White;
+            this.TabelaCliente.RowsDefaultCellStyle = dataGridViewCellStyle140;
             this.TabelaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TabelaCliente.Size = new System.Drawing.Size(421, 307);
+            this.TabelaCliente.Size = new System.Drawing.Size(649, 339);
             this.TabelaCliente.TabIndex = 27;
             this.TabelaCliente.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.TabelaCliente_ColumnAdded);
             this.TabelaCliente.SelectionChanged += new System.EventHandler(this.TabelaCliente_SelectionChanged);
@@ -201,9 +202,9 @@ namespace ModernArt.Forms
             // 
             this.adicionarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.adicionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adicionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.adicionarCliente.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adicionarCliente.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.adicionarCliente.Location = new System.Drawing.Point(338, 363);
+            this.adicionarCliente.Location = new System.Drawing.Point(563, 395);
             this.adicionarCliente.Name = "adicionarCliente";
             this.adicionarCliente.Size = new System.Drawing.Size(127, 38);
             this.adicionarCliente.TabIndex = 26;
@@ -215,9 +216,9 @@ namespace ModernArt.Forms
             // 
             this.atualizarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.atualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.atualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.atualizarCliente.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atualizarCliente.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.atualizarCliente.Location = new System.Drawing.Point(486, 363);
+            this.atualizarCliente.Location = new System.Drawing.Point(711, 395);
             this.atualizarCliente.Name = "atualizarCliente";
             this.atualizarCliente.Size = new System.Drawing.Size(127, 38);
             this.atualizarCliente.TabIndex = 25;
@@ -229,9 +230,9 @@ namespace ModernArt.Forms
             // 
             this.deletarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.deletarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deletarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.deletarCliente.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletarCliente.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deletarCliente.Location = new System.Drawing.Point(632, 363);
+            this.deletarCliente.Location = new System.Drawing.Point(859, 395);
             this.deletarCliente.Name = "deletarCliente";
             this.deletarCliente.Size = new System.Drawing.Size(127, 38);
             this.deletarCliente.TabIndex = 24;
@@ -243,12 +244,12 @@ namespace ModernArt.Forms
             // 
             this.comboClientes.BackColor = System.Drawing.SystemColors.ControlLight;
             this.comboClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboClientes.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboClientes.FormattingEnabled = true;
-            this.comboClientes.Location = new System.Drawing.Point(25, 313);
+            this.comboClientes.Location = new System.Drawing.Point(27, 306);
             this.comboClientes.MaxDropDownItems = 10;
             this.comboClientes.Name = "comboClientes";
-            this.comboClientes.Size = new System.Drawing.Size(262, 24);
+            this.comboClientes.Size = new System.Drawing.Size(249, 31);
             this.comboClientes.TabIndex = 29;
             this.comboClientes.SelectedIndexChanged += new System.EventHandler(this.comboClientes_SelectedIndexChanged);
             // 
@@ -256,11 +257,13 @@ namespace ModernArt.Forms
             // 
             this.btnLimpaCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
             this.btnLimpaCampos.BackgroundImage = global::ModernArt.Properties.Resources.limpar;
-            this.btnLimpaCampos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpaCampos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLimpaCampos.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnLimpaCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpaCampos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
-            this.btnLimpaCampos.Location = new System.Drawing.Point(238, 259);
+            this.btnLimpaCampos.Location = new System.Drawing.Point(229, 242);
             this.btnLimpaCampos.Name = "btnLimpaCampos";
-            this.btnLimpaCampos.Size = new System.Drawing.Size(32, 32);
+            this.btnLimpaCampos.Size = new System.Drawing.Size(47, 47);
             this.btnLimpaCampos.TabIndex = 30;
             this.btnLimpaCampos.UseVisualStyleBackColor = false;
             this.btnLimpaCampos.Click += new System.EventHandler(this.btnLimpaCampos_Click);
@@ -268,7 +271,7 @@ namespace ModernArt.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(28, 112);
+            this.panel1.Location = new System.Drawing.Point(27, 89);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 2);
             this.panel1.TabIndex = 31;
@@ -276,7 +279,7 @@ namespace ModernArt.Forms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(28, 177);
+            this.panel3.Location = new System.Drawing.Point(27, 153);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(248, 2);
             this.panel3.TabIndex = 32;
@@ -284,7 +287,7 @@ namespace ModernArt.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(28, 240);
+            this.panel2.Location = new System.Drawing.Point(28, 217);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(248, 2);
             this.panel2.TabIndex = 32;
@@ -293,9 +296,9 @@ namespace ModernArt.Forms
             // 
             this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnImprimir.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnImprimir.Location = new System.Drawing.Point(187, 363);
+            this.btnImprimir.Location = new System.Drawing.Point(415, 395);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(127, 38);
             this.btnImprimir.TabIndex = 38;
@@ -308,7 +311,7 @@ namespace ModernArt.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1028, 482);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);

@@ -29,11 +29,11 @@ namespace ModernArt.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.deletarDesigner = new System.Windows.Forms.Button();
             this.atualizarDesigner = new System.Windows.Forms.Button();
             this.adicionarDesigner = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@ namespace ModernArt.Forms
             this.deletarDesigner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deletarDesigner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletarDesigner.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deletarDesigner.Location = new System.Drawing.Point(632, 363);
+            this.deletarDesigner.Location = new System.Drawing.Point(858, 395);
             this.deletarDesigner.Name = "deletarDesigner";
             this.deletarDesigner.Size = new System.Drawing.Size(127, 38);
             this.deletarDesigner.TabIndex = 0;
@@ -77,7 +77,7 @@ namespace ModernArt.Forms
             this.atualizarDesigner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.atualizarDesigner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atualizarDesigner.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.atualizarDesigner.Location = new System.Drawing.Point(486, 363);
+            this.atualizarDesigner.Location = new System.Drawing.Point(712, 395);
             this.atualizarDesigner.Name = "atualizarDesigner";
             this.atualizarDesigner.Size = new System.Drawing.Size(127, 38);
             this.atualizarDesigner.TabIndex = 1;
@@ -91,7 +91,7 @@ namespace ModernArt.Forms
             this.adicionarDesigner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adicionarDesigner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adicionarDesigner.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.adicionarDesigner.Location = new System.Drawing.Point(338, 363);
+            this.adicionarDesigner.Location = new System.Drawing.Point(566, 395);
             this.adicionarDesigner.Name = "adicionarDesigner";
             this.adicionarDesigner.Size = new System.Drawing.Size(127, 38);
             this.adicionarDesigner.TabIndex = 2;
@@ -102,89 +102,89 @@ namespace ModernArt.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(22, 75);
+            this.label1.Location = new System.Drawing.Point(22, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(56, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nome";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(22, 144);
+            this.label2.Location = new System.Drawing.Point(22, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(72, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "Telefone";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(22, 207);
+            this.label3.Location = new System.Drawing.Point(22, 172);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 17);
+            this.label3.Size = new System.Drawing.Size(51, 29);
             this.label3.TabIndex = 6;
             this.label3.Text = "Email";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label4.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(333, 23);
+            this.label4.Location = new System.Drawing.Point(341, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 26);
+            this.label4.Size = new System.Drawing.Size(118, 29);
             this.label4.TabIndex = 7;
             this.label4.Text = "Designers";
             // 
             // nomeDesigner
             // 
-            this.nomeDesigner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(76)))));
+            this.nomeDesigner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.nomeDesigner.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nomeDesigner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nomeDesigner.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeDesigner.ForeColor = System.Drawing.SystemColors.Window;
-            this.nomeDesigner.Location = new System.Drawing.Point(22, 98);
+            this.nomeDesigner.Location = new System.Drawing.Point(27, 68);
             this.nomeDesigner.Name = "nomeDesigner";
-            this.nomeDesigner.Size = new System.Drawing.Size(251, 19);
+            this.nomeDesigner.Size = new System.Drawing.Size(251, 25);
             this.nomeDesigner.TabIndex = 8;
             // 
             // telefoneDesigner
             // 
-            this.telefoneDesigner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(76)))));
+            this.telefoneDesigner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.telefoneDesigner.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.telefoneDesigner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.telefoneDesigner.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefoneDesigner.ForeColor = System.Drawing.SystemColors.Window;
-            this.telefoneDesigner.Location = new System.Drawing.Point(22, 164);
+            this.telefoneDesigner.Location = new System.Drawing.Point(28, 133);
             this.telefoneDesigner.Name = "telefoneDesigner";
-            this.telefoneDesigner.Size = new System.Drawing.Size(210, 19);
+            this.telefoneDesigner.Size = new System.Drawing.Size(210, 25);
             this.telefoneDesigner.TabIndex = 9;
             // 
             // emailDesigner
             // 
-            this.emailDesigner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(76)))));
+            this.emailDesigner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.emailDesigner.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.emailDesigner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.emailDesigner.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailDesigner.ForeColor = System.Drawing.SystemColors.Window;
-            this.emailDesigner.Location = new System.Drawing.Point(22, 227);
+            this.emailDesigner.Location = new System.Drawing.Point(28, 196);
             this.emailDesigner.Name = "emailDesigner";
-            this.emailDesigner.Size = new System.Drawing.Size(251, 19);
+            this.emailDesigner.Size = new System.Drawing.Size(251, 25);
             this.emailDesigner.TabIndex = 10;
             // 
             // designerTrue
             // 
             this.designerTrue.AutoSize = true;
             this.designerTrue.Checked = true;
-            this.designerTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.designerTrue.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.designerTrue.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.designerTrue.Location = new System.Drawing.Point(119, 283);
+            this.designerTrue.Location = new System.Drawing.Point(119, 227);
             this.designerTrue.Name = "designerTrue";
-            this.designerTrue.Size = new System.Drawing.Size(54, 24);
+            this.designerTrue.Size = new System.Drawing.Size(58, 33);
             this.designerTrue.TabIndex = 14;
             this.designerTrue.TabStop = true;
             this.designerTrue.Text = "Sim";
@@ -193,11 +193,11 @@ namespace ModernArt.Forms
             // designerFalse
             // 
             this.designerFalse.AutoSize = true;
-            this.designerFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.designerFalse.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.designerFalse.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.designerFalse.Location = new System.Drawing.Point(179, 283);
+            this.designerFalse.Location = new System.Drawing.Point(179, 227);
             this.designerFalse.Name = "designerFalse";
-            this.designerFalse.Size = new System.Drawing.Size(56, 24);
+            this.designerFalse.Size = new System.Drawing.Size(60, 33);
             this.designerFalse.TabIndex = 15;
             this.designerFalse.Text = "Não";
             this.designerFalse.UseVisualStyleBackColor = true;
@@ -205,11 +205,11 @@ namespace ModernArt.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(22, 285);
+            this.label5.Location = new System.Drawing.Point(22, 229);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 20);
+            this.label5.Size = new System.Drawing.Size(86, 29);
             this.label5.TabIndex = 16;
             this.label5.Text = "Disponível";
             // 
@@ -217,11 +217,11 @@ namespace ModernArt.Forms
             // 
             this.comboDesigners.BackColor = System.Drawing.SystemColors.ControlLight;
             this.comboDesigners.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboDesigners.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboDesigners.Font = new System.Drawing.Font("Myanmar Text", 10F);
             this.comboDesigners.FormattingEnabled = true;
             this.comboDesigners.Location = new System.Drawing.Point(22, 313);
             this.comboDesigners.Name = "comboDesigners";
-            this.comboDesigners.Size = new System.Drawing.Size(262, 24);
+            this.comboDesigners.Size = new System.Drawing.Size(262, 31);
             this.comboDesigners.TabIndex = 17;
             this.comboDesigners.SelectedIndexChanged += new System.EventHandler(this.comboDesigners_SelectedIndexChanged);
             // 
@@ -232,13 +232,13 @@ namespace ModernArt.Forms
             this.TabelaDesigner.AllowUserToOrderColumns = true;
             this.TabelaDesigner.AllowUserToResizeColumns = false;
             this.TabelaDesigner.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.TabelaDesigner.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.TabelaDesigner.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.TabelaDesigner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -247,45 +247,45 @@ namespace ModernArt.Forms
             this.TabelaDesigner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TabelaDesigner.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.TabelaDesigner.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TabelaDesigner.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaDesigner.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.TabelaDesigner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TabelaDesigner.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TabelaDesigner.DefaultCellStyle = dataGridViewCellStyle8;
             this.TabelaDesigner.GridColor = System.Drawing.Color.White;
             this.TabelaDesigner.Location = new System.Drawing.Point(338, 50);
             this.TabelaDesigner.MultiSelect = false;
             this.TabelaDesigner.Name = "TabelaDesigner";
             this.TabelaDesigner.ReadOnly = true;
             this.TabelaDesigner.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TabelaDesigner.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaDesigner.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.TabelaDesigner.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.TabelaDesigner.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            this.TabelaDesigner.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.TabelaDesigner.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TabelaDesigner.Size = new System.Drawing.Size(421, 307);
+            this.TabelaDesigner.Size = new System.Drawing.Size(649, 339);
             this.TabelaDesigner.TabIndex = 28;
             this.TabelaDesigner.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.TabelaDesigner_ColumnAdded);
             this.TabelaDesigner.SelectionChanged += new System.EventHandler(this.TabelaDesigner_SelectionChanged);
@@ -293,7 +293,8 @@ namespace ModernArt.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(25, 248);
+            this.panel2.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(27, 217);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(248, 2);
             this.panel2.TabIndex = 35;
@@ -301,7 +302,8 @@ namespace ModernArt.Forms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(25, 185);
+            this.panel3.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(27, 154);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(248, 2);
             this.panel3.TabIndex = 34;
@@ -309,7 +311,8 @@ namespace ModernArt.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(25, 120);
+            this.panel1.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(27, 89);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 2);
             this.panel1.TabIndex = 33;
@@ -318,11 +321,13 @@ namespace ModernArt.Forms
             // 
             this.btnLimpaCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
             this.btnLimpaCampos.BackgroundImage = global::ModernArt.Properties.Resources.limpar;
-            this.btnLimpaCampos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpaCampos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLimpaCampos.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnLimpaCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpaCampos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
-            this.btnLimpaCampos.Location = new System.Drawing.Point(241, 273);
+            this.btnLimpaCampos.Location = new System.Drawing.Point(237, 260);
             this.btnLimpaCampos.Name = "btnLimpaCampos";
-            this.btnLimpaCampos.Size = new System.Drawing.Size(32, 32);
+            this.btnLimpaCampos.Size = new System.Drawing.Size(47, 47);
             this.btnLimpaCampos.TabIndex = 33;
             this.btnLimpaCampos.UseVisualStyleBackColor = false;
             this.btnLimpaCampos.Click += new System.EventHandler(this.btnLimpaCampos_Click);
@@ -333,7 +338,7 @@ namespace ModernArt.Forms
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnImprimir.Location = new System.Drawing.Point(192, 364);
+            this.btnImprimir.Location = new System.Drawing.Point(420, 396);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(127, 38);
             this.btnImprimir.TabIndex = 38;
@@ -345,8 +350,8 @@ namespace ModernArt.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.ClientSize = new System.Drawing.Size(1028, 482);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnLimpaCampos);
             this.Controls.Add(this.panel2);
