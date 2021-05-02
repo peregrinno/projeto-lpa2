@@ -84,7 +84,7 @@ namespace ModernArt.Forms
             dados.AtualizarServico(id, servicoNome.Text,
                                  Convert.ToDouble(valorBaseServico.Text));
             AtualizarViewServicos();
-            MessageBox.Show("Alterado com sucesso!");
+            MessageBox.Show("Alterado com sucesso.");
             
         }
 
