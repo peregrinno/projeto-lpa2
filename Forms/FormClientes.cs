@@ -42,6 +42,14 @@ namespace ModernArt.Forms
         {
             Dados dados = new Dados();
             List<Cliente> listaClientes = dados.GetTodosClientes();
+            if (listaClientes.Count == 1)
+            {
+                deletarCliente.Enabled = false;
+            }
+            else
+            {
+                deletarCliente.Enabled = true;
+            }
             TabelaCliente.DataSource = listaClientes;
             TabelaCliente.Columns["Id"].HeaderText = "ID";
         }
@@ -56,20 +64,34 @@ namespace ModernArt.Forms
 
         private void atualizarCliente_Click(object sender, EventArgs e)
         {
-            var cliente = (Cliente)TabelaCliente.CurrentRow.DataBoundItem;
-            Dados dados = new Dados();
-            dados.AtualizarCliente(cliente.Id, nomeCliente.Text, emailCliente.Text, telefoneCliente.Text);
-            AtualizaViewClientes();
-            MessageBox.Show("Alterado com sucesso!");
+            if (TabelaCliente.SelectedRows.Count > 0)
+            {
+                var cliente = (Cliente)TabelaCliente.CurrentRow.DataBoundItem;
+                Dados dados = new Dados();
+                dados.AtualizarCliente(cliente.Id, nomeCliente.Text, emailCliente.Text, telefoneCliente.Text);
+                AtualizaViewClientes();
+                MessageBox.Show("Alterado com sucesso!"); 
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma entrada antes.");
+            }
         }
 
         private void deletarCliente_Click(object sender, EventArgs e)
         {
-            var cliente = (Cliente)TabelaCliente.CurrentRow.DataBoundItem;
-            Dados dados = new Dados();
-            int resultadoOperacao = dados.DeletarCliente(cliente.Id);
-            AtualizaViewClientes();
-            MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este cliente está cadastrado em um projeto!");
+            if (TabelaCliente.SelectedRows.Count > 0)
+            {
+                var cliente = (Cliente)TabelaCliente.CurrentRow.DataBoundItem;
+                Dados dados = new Dados();
+                int resultadoOperacao = dados.DeletarCliente(cliente.Id);
+                AtualizaViewClientes();
+                MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este cliente está cadastrado em um projeto!"); 
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma entrada antes.");
+            }
         }
 
         //Metodo imprimir

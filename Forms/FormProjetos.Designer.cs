@@ -175,6 +175,7 @@ namespace ModernArt.Forms
             this.valorProjeto.Name = "valorProjeto";
             this.valorProjeto.Size = new System.Drawing.Size(199, 25);
             this.valorProjeto.TabIndex = 33;
+            this.valorProjeto.TextChanged += new System.EventHandler(this.valorProjeto_TextChanged);
             // 
             // comboFkClientes
             // 

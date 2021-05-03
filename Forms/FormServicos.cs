@@ -42,6 +42,14 @@ namespace ModernArt.Forms
         public void AtualizarViewServicos() {
             Dados dados = new Dados();
             List<Servico> listaServicos = dados.GetTodosServicos();
+            if (listaServicos.Count == 1)
+            {
+                deletarServicos.Enabled = false;
+            }
+            else
+            {
+                deletarServicos.Enabled = true;
+            }
             TabelaServico.DataSource = listaServicos;
             TabelaServico.Columns["Id"].HeaderText = "ID";
             TabelaServico.Columns["ValorBase"].HeaderText = "Valor Base";
@@ -66,22 +74,35 @@ namespace ModernArt.Forms
      
         private void deletarServicos_Click(object sender, EventArgs e)
         {
-            var servico = (Servico)TabelaServico.CurrentRow.DataBoundItem;
-            Dados dados = new Dados();
-            int resultadoOperacao = dados.DeletarServico(servico.Id);
-            AtualizarViewServicos();
-            MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este serviço está cadastrado em um projeto!");
+            if (TabelaServico.SelectedRows.Count > 0)
+            {
+                var servico = (Servico)TabelaServico.CurrentRow.DataBoundItem;
+                Dados dados = new Dados();
+                int resultadoOperacao = dados.DeletarServico(servico.Id);
+                AtualizarViewServicos();
+                MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este serviço está cadastrado em um projeto!"); 
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma entrada antes.");
+            }
         }
 
         private void alterarServico_Click(object sender, EventArgs e)
         {
-            var servico = (Servico)TabelaServico.CurrentRow.DataBoundItem;
-            Dados dados = new Dados();
-            dados.AtualizarServico(servico.Id, servicoNome.Text,
-                                 Convert.ToDouble(valorBaseServico.Text.Replace(".", ",")));
-            AtualizarViewServicos();
-            MessageBox.Show("Alterado com sucesso.");
-            
+            if (TabelaServico.SelectedRows.Count > 0)
+            {
+                var servico = (Servico)TabelaServico.CurrentRow.DataBoundItem;
+                Dados dados = new Dados();
+                dados.AtualizarServico(servico.Id, servicoNome.Text,
+                                     Convert.ToDouble(valorBaseServico.Text.Replace(".", ",")));
+                AtualizarViewServicos();
+                MessageBox.Show("Alterado com sucesso."); 
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma entrada antes.");
+            }
         }
 
         private void FormServicos_Load(object sender, EventArgs e)
@@ -199,6 +220,16 @@ namespace ModernArt.Forms
         private void TabelaServico_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             limpar();
+        }
+
+        private void valorBaseServico_TextChanged(object sender, EventArgs e)
+        {
+            double a;
+            if (!double.TryParse(valorBaseServico.Text, out a))
+            {
+                // If not int clear textbox text or Undo() last operation
+                valorBaseServico.Clear();
+            }
         }
     }
 }

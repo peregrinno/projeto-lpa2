@@ -42,6 +42,14 @@ namespace ModernArt.Forms
         {
             Dados dados = new Dados();
             List<Designer> listaDesigners = dados.GetTodosDesigners();
+            if (listaDesigners.Count == 1)
+            {
+                deletarDesigner.Enabled = false;
+            } 
+            else
+            {
+                deletarDesigner.Enabled = true;
+            }
             TabelaDesigner.DataSource = listaDesigners;
             TabelaDesigner.Columns["Id"].HeaderText = "ID";
             TabelaDesigner.Columns["Disponivel"].HeaderText = "Disponível";
@@ -66,29 +74,43 @@ namespace ModernArt.Forms
 
         private void atualizarDesigner_Click(object sender, EventArgs e)
         {
-            var designer = (Designer)TabelaDesigner.CurrentRow.DataBoundItem;
-            bool designerDisponivel;
-            if (designerTrue.Checked)
+            if (TabelaDesigner.SelectedRows.Count > 0)
             {
-                designerDisponivel = true;
+                var designer = (Designer)TabelaDesigner.CurrentRow.DataBoundItem;
+                bool designerDisponivel;
+                if (designerTrue.Checked)
+                {
+                    designerDisponivel = true;
+                }
+                else
+                {
+                    designerDisponivel = false;
+                }
+                Dados dados = new Dados();
+                dados.AtualizarDesigner(designer.Id, nomeDesigner.Text, telefoneDesigner.Text, emailDesigner.Text, designerDisponivel);
+                AtualizaViewDesigners();
+                MessageBox.Show("Alterado com sucesso!");
             }
             else
             {
-                designerDisponivel = false;
+                MessageBox.Show("Selecione uma entrada antes.");
             }
-            Dados dados = new Dados();
-            dados.AtualizarDesigner(designer.Id, nomeDesigner.Text, telefoneDesigner.Text, emailDesigner.Text, designerDisponivel);
-            AtualizaViewDesigners();
-            MessageBox.Show("Alterado com sucesso!");
         }
 
         private void deletarDesigner_Click(object sender, EventArgs e)
         {
-            var designer = (Designer)TabelaDesigner.CurrentRow.DataBoundItem;
-            Dados dados = new Dados();
-            int resultadoOperacao = dados.DeletarDesigner(designer.Id);
-            AtualizaViewDesigners();
-            MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este designer está cadastrado em um projeto!");
+            if (TabelaDesigner.SelectedRows.Count > 0)
+            {
+                var designer = (Designer)TabelaDesigner.CurrentRow.DataBoundItem;
+                Dados dados = new Dados();
+                int resultadoOperacao = dados.DeletarDesigner(designer.Id);
+                AtualizaViewDesigners();
+                MessageBox.Show(resultadoOperacao == 0 ? "Deletado com sucesso." : "Erro: este designer está cadastrado em um projeto!"); 
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma entrada antes.");
+            }
         }
 
         //Metodo imprimir

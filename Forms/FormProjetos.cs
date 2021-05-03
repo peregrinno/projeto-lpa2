@@ -68,6 +68,14 @@ namespace ModernArt.Forms
         {
             Dados dados = new Dados();
             List<Projeto> listaProjetos = dados.GetTodosProjetos();
+            if (listaProjetos.Count == 1)
+            {
+                deletarProjeto.Enabled = false;
+            }
+            else
+            {
+                deletarProjeto.Enabled = true;
+            }
             TabelaProjetos.DataSource = listaProjetos;
             TabelaProjetos.Columns["Servico"].HeaderText = "Serviço";
             TabelaProjetos.Columns["ValorFinal"].HeaderText = "Valor Final";
@@ -102,38 +110,52 @@ namespace ModernArt.Forms
 
         private void atualizarProjeto_Click(object sender, EventArgs e)
         {
-            var projeto = (Projeto)TabelaProjetos.CurrentRow.DataBoundItem;
-            int id = projeto.Id;
-            Cliente cliente = (Cliente)comboFkClientes.SelectedItem;
-            Designer designer = (Designer)comboFkDesigner.SelectedItem;
-            Servico servico = (Servico)comboFkServicos.SelectedItem;
-            char statusProjeto;
-            if (statusAndamento.Checked)
+            if (TabelaProjetos.SelectedRows.Count > 0)
             {
-                statusProjeto = 'A';
-            }
-            else if (statusOrcamento.Checked)
-            {
-                statusProjeto = 'O';
+                var projeto = (Projeto)TabelaProjetos.CurrentRow.DataBoundItem;
+                int id = projeto.Id;
+                Cliente cliente = (Cliente)comboFkClientes.SelectedItem;
+                Designer designer = (Designer)comboFkDesigner.SelectedItem;
+                Servico servico = (Servico)comboFkServicos.SelectedItem;
+                char statusProjeto;
+                if (statusAndamento.Checked)
+                {
+                    statusProjeto = 'A';
+                }
+                else if (statusOrcamento.Checked)
+                {
+                    statusProjeto = 'O';
+                }
+                else
+                {
+                    statusProjeto = 'F';
+                }
+                Dados dados = new Dados();
+                dados.AtualizarProjeto(id, designer.Id, servico.Id, cliente.Id, nomeProjeto.Text,
+                    Convert.ToDouble(valorProjeto.Text.Replace(".", ",")), statusProjeto);
+                AtualizaViewProjetos();
+                MessageBox.Show("Alterado com sucesso!"); 
             }
             else
             {
-                statusProjeto = 'F';
+                MessageBox.Show("Selecione uma entrada antes.");
             }
-            Dados dados = new Dados();
-            dados.AtualizarProjeto(id, designer.Id, servico.Id, cliente.Id, nomeProjeto.Text, 
-                Convert.ToDouble(valorProjeto.Text.Replace(".", ",")), statusProjeto);
-            AtualizaViewProjetos();
-            MessageBox.Show("Alterado com sucesso!");
         }
 
         private void deletarProjeto_Click(object sender, EventArgs e)
         {
-            var projeto = (Projeto)TabelaProjetos.CurrentRow.DataBoundItem;
-            Dados dados = new Dados();
-            dados.DeletarProjeto(projeto.Id);
-            AtualizaViewProjetos();
-            MessageBox.Show("Deletado com sucesso!");
+            if (TabelaProjetos.SelectedRows.Count > 0)
+            {
+                var projeto = (Projeto)TabelaProjetos.CurrentRow.DataBoundItem;
+                Dados dados = new Dados();
+                dados.DeletarProjeto(projeto.Id);
+                AtualizaViewProjetos();
+                MessageBox.Show("Deletado com sucesso!"); 
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma entrada antes.");
+            }
         }
 
         //Metodo imprimir
@@ -310,6 +332,16 @@ namespace ModernArt.Forms
         private void TabelaProjetos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             limpar();
+        }
+
+        private void valorProjeto_TextChanged(object sender, EventArgs e)
+        {
+            double a;
+            if (!double.TryParse(valorProjeto.Text, out a))
+            {
+                // If not int clear textbox text or Undo() last operation
+                valorProjeto.Clear();
+            }
         }
     }
 }
