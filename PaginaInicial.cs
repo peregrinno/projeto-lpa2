@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ModernArt
 {
@@ -200,9 +201,20 @@ namespace ModernArt
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+
         private void btnBotaorelatorio_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", @"C:\CoralArt\Relatórios\");
+            Boolean arquivo = System.IO.Directory.Exists(@"C:\CoralArt\Relatórios\");
+            if (arquivo == true)
+            {
+                System.Diagnostics.Process.Start("explorer.exe", @"C:\CoralArt\Relatórios\");
+            }
+            else
+            {
+                DirectoryInfo raiz = new DirectoryInfo(@"C:\CoralArt");
+                raiz.CreateSubdirectory("Relatórios");
+                System.Diagnostics.Process.Start("explorer.exe", @"C:\CoralArt\Relatórios\");
+            }
         }
         //Fim botoes de controle de janela
     }
