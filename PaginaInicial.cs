@@ -155,11 +155,6 @@ namespace ModernArt
             btnCloseChildForm.Visible = false;
         }
 
-        private void panelDesktopPane_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         //Função para deixar a janela "movivel", NAO FUNCIONA AINDA D;
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -195,7 +190,8 @@ namespace ModernArt
 
         private void PanelAgencia_Load(object sender, EventArgs e)
         {
-
+            Dados dados = new Dados();
+            dados.GetTodosServicos();
         }
 
         private void panelTitleBar_MouseDown_1(object sender, MouseEventArgs e)
